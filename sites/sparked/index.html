@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparked &amp; Steady — Build a life that supports your spark.</title>
+<meta name="description" content="Practical systems and support that help women with ADHD live the life they want, in a way that works for them. Join the waitlist.">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     SPARKED & STEADY — HOMEPAGE
+     Everything below this line (from <div class="ss-page"> to </div>) is the
+     paste-ready block for a GoDaddy "Custom HTML / Embed" section.
+     All styles are scoped with the .ss- prefix so nothing leaks into the builder.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="ss-page" id="ss-top">
+
+<style>
+/* ───────────────────────────────────────────────────────────────────────────
+   1. FONTS
+   ─────────────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap');
+
+/* ───────────────────────────────────────────────────────────────────────────
+   2. BRAND TOKENS  —  edit colours & spacing here only
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-page{
+  /* Approved palette — do not substitute */
+  --navy:   #0D2B3E;
+  --sage:   #A3B29A;
+  --coral:  #E7A28C;
+  --blush:  #F6E6E1;
+  --cream:  #E9E3DB;
+  --gold:   #D4AF37;
+
+  /* Neutral paper tones derived from Cream (backgrounds only) */
+  --paper:      #F7F3EF;
+  --paper-soft: #FDFBF9;
+
+  /* Type */
+  --display: 'Playfair Display', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --sans:    'Jost', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+  /* Rhythm */
+  --gutter:  clamp(1.5rem, 5vw, 4.5rem);
+  --section: clamp(5.5rem, 12vw, 10.5rem);
+  --measure: 60ch;
+
+  /* Derived */
+  --rule:      rgba(13, 43, 62, 0.14);
+  --rule-soft: rgba(13, 43, 62, 0.08);
+  --ink-70:    rgba(13, 43, 62, 0.72);
+  --ink-55:    rgba(13, 43, 62, 0.58);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   3. SCOPED RESET
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-page, .ss-page *, .ss-page *::before, .ss-page *::after{ box-sizing: border-box; }
+.ss-page{
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+/* :where() keeps the reset at zero specificity so layout rules always win */
+.ss-page :where(h1, h2, h3, h4, p, ul, ol, li, figure, blockquote){ margin: 0; padding: 0; }
+.ss-page :where(ul, ol){ list-style: none; }
+.ss-page :where(img){ display: block; max-width: 100%; height: auto; }
+.ss-page :where(a){ color: inherit; text-decoration: none; }
+.ss-page :where(button, input){ font: inherit; color: inherit; }
+.ss-page :focus-visible{
+  outline: 2px solid var(--coral);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   4. LAYOUT PRIMITIVES
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-wrap{
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+.ss-wrap--narrow{ max-width: 940px; }
+.ss-section{ padding-top: var(--section); padding-bottom: var(--section); }
+.ss-section--paper{ background: var(--paper); }
+.ss-section--soft { background: var(--paper-soft); }
+.ss-section--cream{ background: var(--cream); }
+.ss-section--blush{ background: var(--blush); }
+.ss-section--navy {
+  background: var(--navy);
+  color: var(--paper);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   5. TYPOGRAPHY
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-eyebrow{
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  display: flex;
+  align-items: center;
+  gap: 0.95em;
+}
+/* small navy accent rule */
+.ss-eyebrow::before{
+  content: "";
+  flex: none;
+  width: 22px;
+  height: 1px;
+  background: var(--navy);
+  opacity: 0.55;
+}
+.ss-section--navy .ss-eyebrow{ color: var(--sage); }
+.ss-section--navy .ss-eyebrow::before{ background: var(--sage); opacity: 0.7; }
+.ss-footer .ss-eyebrow::before{ background: var(--sage); opacity: 0.7; }
+
+.ss-display{
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  font-size: clamp(2.5rem, 5.6vw, 4.6rem);
+}
+.ss-h2{
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+  font-size: clamp(1.95rem, 3.5vw, 3rem);
+  /* em, not ch — measured against the heading's own size, not the body font */
+  max-width: 13em;
+}
+.ss-h3{
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.45rem, 2.3vw, 1.9rem);
+}
+.ss-lead{
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+  line-height: 1.78;
+  color: var(--ink-70);
+  max-width: var(--measure);
+  font-weight: 300;
+}
+.ss-body{
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--ink-70);
+  max-width: var(--measure);
+  font-weight: 300;
+}
+.ss-section--navy .ss-lead,
+.ss-section--navy .ss-body{ color: rgba(247, 243, 239, 0.78); }
+
+.ss-body + .ss-body{ margin-top: 1.35em; }
+.ss-italic{ font-family: var(--display); font-style: italic; }
+
+/* Hairline rule */
+.ss-rule{
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+  width: 100%;
+}
+.ss-rule--short{ width: 56px; height: 1px; background: var(--coral); }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   6. LOGO LOCKUP  (typographic — swap for an SVG/PNG file any time)
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-logo{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  white-space: nowrap;
+}
+.ss-logo__spark{ color: var(--coral); }
+.ss-logo__amp{ color: var(--sage); font-style: italic; font-weight: 400; font-size: 1.12em; }
+.ss-logo__steady{ color: var(--navy); }
+.ss-logo__star{ width: 0.5em; height: 0.5em; fill: var(--gold); align-self: flex-start; margin-left: -0.1em; }
+.ss-footer .ss-logo__steady{ color: var(--paper); }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   7. BUTTONS
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 1.15em 2.6em;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--coral);
+  color: var(--navy);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .45s cubic-bezier(.2,.7,.3,1),
+              transform .45s cubic-bezier(.2,.7,.3,1),
+              box-shadow .45s cubic-bezier(.2,.7,.3,1);
+  box-shadow: 0 1px 0 rgba(13,43,62,0.04);
+}
+.ss-btn:hover{
+  background: #DE8F76;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -14px rgba(13,43,62,0.45);
+}
+.ss-btn:active{ transform: translateY(0); }
+
+.ss-btn--ghost{
+  background: transparent;
+  border-color: var(--rule);
+  color: var(--navy);
+  padding: 0.9em 1.9em;
+}
+.ss-btn--ghost:hover{ background: var(--navy); border-color: var(--navy); color: var(--paper); }
+
+/* Quiet text link with animated underline */
+.ss-link{
+  position: relative;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.ss-link::after{
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 100%; height: 1px;
+  background: currentColor;
+  opacity: .35;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s cubic-bezier(.2,.7,.3,1), opacity .5s;
+}
+.ss-link:hover::after{ transform: scaleX(1); opacity: .8; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   8. NAVIGATION  (no menu — Phase 1: logo + single call to action)
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-nav{
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(247, 243, 239, 0);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: background-color .5s ease, border-color .5s ease, padding .5s ease;
+  padding: 1.6rem 0;
+}
+.ss-nav.is-stuck{
+  background: rgba(247, 243, 239, 0.88);
+  border-bottom-color: var(--rule-soft);
+  padding: 1.05rem 0;
+}
+.ss-nav__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.ss-nav__cta{ flex: none; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   9. HERO
+   ─────────────────────────────────────────────────────────────────────────── */
+/* Compact enough that both calls to action sit above the fold on a laptop */
+.ss-hero{
+  background: var(--paper);
+  padding-top: clamp(1.25rem, 2.4vw, 2rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  position: relative;
+}
+.ss-hero__grid{
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+.ss-hero__copy > * + *{ margin-top: 1.3rem; }
+.ss-hero__title{
+  max-width: 15ch;
+  font-size: clamp(2.15rem, 4.3vw, 3.6rem);
+}
+.ss-hero__title em{
+  font-style: italic;
+  color: var(--coral);
+}
+.ss-hero__lead{ max-width: 46ch; }
+.ss-hero .ss-lead{ font-size: clamp(0.98rem, 1.1vw, 1.08rem); line-height: 1.7; }
+.ss-hero .ss-body{ font-size: 1rem; line-height: 1.72; }
+.ss-hero__note{
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  margin-top: 1.15rem !important;
+}
+.ss-hero__note b{ color: var(--navy); font-weight: 500; }
+
+/* Statement strip under the hero */
+.ss-statement{
+  background: var(--paper);
+  border-top: 1px solid var(--rule-soft);
+}
+.ss-statement__inner{
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+}
+.ss-statement__text{
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.7vw, 2.1rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  max-width: 22ch;
+  margin: 0 auto;
+}
+/* small navy diamond above the statement */
+.ss-statement__mark{
+  width: 7px; height: 7px;
+  margin: 0 auto 1.9rem;
+  background: var(--navy);
+  transform: rotate(45deg);
+  opacity: .8;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   10. PHOTOGRAPHY FRAMES
+   Each frame crops its image to a fixed ratio — swap the <img> src and the
+   composition re-crops itself. No image editing needed.
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-photo{
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+  border-radius: 2px;
+}
+.ss-photo::after{  /* soft warm veil keeps photos on-palette */
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(246,230,225,.16), rgba(13,43,62,.03));
+  pointer-events: none;
+}
+.ss-photo img{ width: 100%; height: 100%; object-fit: cover; }
+.ss-photo--portrait{ aspect-ratio: 4 / 5; }
+.ss-photo--founder { aspect-ratio: 5 / 6; }
+.ss-photo--band    { aspect-ratio: 16 / 6; border-radius: 0; }
+.ss-photo--band img{ object-position: center 68%; }
+
+/* Thin navy outline offset behind the photo — a quiet editorial accent */
+.ss-framed{ position: relative; }
+.ss-framed::before{
+  content: "";
+  position: absolute;
+  left: -16px; top: -16px; right: 16px; bottom: 16px;
+  border: 1px solid rgba(13, 43, 62, 0.32);
+  pointer-events: none;
+}
+/* lift the image above the outline instead of using a negative z-index,
+   which would sink it behind the section background */
+.ss-framed .ss-photo{ z-index: 1; }
+
+/* Full-bleed editorial band */
+.ss-band{ background: var(--paper-soft); padding-bottom: clamp(4rem, 9vw, 8rem); }
+.ss-band figure{ overflow: hidden; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   11. SECTION HEADER (shared)
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-head .ss-eyebrow{ margin-bottom: 1.6rem; }
+.ss-split{
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+.ss-split .ss-body:first-child{ margin-top: 0.4rem; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   12. WHAT YOU'LL FIND — editorial numbered list
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-list{ margin-top: clamp(3rem, 6vw, 4.5rem); border-top: 1px solid var(--rule); }
+.ss-list__item{
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: baseline;
+  padding: clamp(2rem, 3.4vw, 2.9rem) 0;
+  border-bottom: 1px solid var(--rule);
+  transition: background-color .6s ease;
+}
+.ss-list__item{ position: relative; }
+/* navy accent bar slides in on hover */
+.ss-list__item::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: -1px;
+  width: 2px;
+  background: var(--navy);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .55s cubic-bezier(.2,.7,.3,1);
+}
+.ss-list__item:hover{ background: rgba(255,255,255,.5); }
+.ss-list__item:hover::before{ transform: scaleY(1); }
+.ss-list__num{
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--coral);
+  letter-spacing: 0.06em;
+}
+.ss-list__title{ font-family: var(--display); font-size: clamp(1.3rem, 2vw, 1.65rem); line-height: 1.25; }
+.ss-list__text{ font-size: 1rem; line-height: 1.8; color: var(--ink-70); font-weight: 300; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   13. OUR BELIEFS  (navy)
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-beliefs__quote{
+  font-family: var(--display);
+  font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+.ss-beliefs__quote em{ font-style: italic; color: var(--coral); }
+.ss-creed{ margin-top: 0.4rem; }
+.ss-creed li{
+  padding: 1.3rem 0;
+  border-bottom: 1px solid rgba(247,243,239,0.15);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(247,243,239,0.9);
+  display: flex;
+  gap: 1.1rem;
+  align-items: baseline;
+}
+.ss-creed li:first-child{ border-top: 1px solid rgba(247,243,239,0.15); }
+.ss-creed li::before{
+  content: "";
+  flex: none;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  transform: translateY(-3px);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   14. WHAT WE'RE BUILDING
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-pillars{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+.ss-pillar{ padding-top: 2rem; border-top: 1px solid rgba(13,43,62,.2); }
+.ss-pillar__label{
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+.ss-pillar__text{
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   15. FOUNDER
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-founder{
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: start;
+}
+/* The portrait rides along with the longer text column on desktop */
+.ss-founder__media{ position: sticky; top: 7rem; }
+.ss-founder__copy > * + *{ margin-top: 1.35rem; }
+.ss-founder__pull{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.1vw, 1.6rem);
+  line-height: 1.5;
+  color: var(--navy);
+  padding-left: 1.6rem;
+  border-left: 1px solid var(--coral);
+  max-width: 34ch;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+.ss-sign{ margin-top: 2.4rem !important; }
+.ss-sign__name{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.ss-sign__role{
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  margin-top: 0.7rem;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   16. WAITLIST
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-waitlist{ text-align: center; }
+.ss-waitlist .ss-eyebrow{ justify-content: center; }
+.ss-waitlist .ss-h2{ margin-left: auto; margin-right: auto; }
+/* navy hairline separating the invitation from the form */
+.ss-waitlist .ss-form{ border-top: 1px solid rgba(13,43,62,.18); padding-top: clamp(2.4rem, 4vw, 3.2rem); }
+.ss-waitlist .ss-body{ margin-left: auto; margin-right: auto; max-width: 52ch; }
+.ss-form{
+  margin-top: clamp(2.8rem, 5vw, 3.8rem);
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.ss-form__row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+}
+.ss-field{ display: block; }
+.ss-field__label{
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  margin-bottom: 0.85rem;
+}
+.ss-field input{
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(13,43,62,.28);
+  background: transparent;
+  padding: 0.55rem 0 0.85rem;
+  font-size: 1.02rem;
+  font-weight: 300;
+  border-radius: 0;
+  transition: border-color .4s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.ss-field input::placeholder{ color: rgba(13,43,62,.32); }
+.ss-field input:focus{ outline: none; border-bottom-color: var(--coral); }
+.ss-field input:focus-visible{ outline: none; }
+.ss-form__actions{
+  margin-top: clamp(2.2rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+}
+.ss-form__fine{
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--ink-55);
+  font-weight: 300;
+  max-width: 46ch;
+  text-align: center;
+}
+.ss-form__msg{
+  display: none;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--navy);
+  text-align: center;
+  margin-top: 2rem;
+}
+.ss-form__msg.is-visible{ display: block; }
+
+/* ───────────────────────────────────────────────────────────────────────────
+   17. FOOTER
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-footer{
+  background: var(--navy);
+  color: rgba(247,243,239,.8);
+  padding-top: clamp(4rem, 8vw, 6rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+.ss-footer__top{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+  padding-bottom: clamp(3rem, 6vw, 4rem);
+  border-bottom: 1px solid rgba(247,243,239,.16);
+}
+.ss-footer__tag{
+  font-family: var(--display);
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  line-height: 1.4;
+  color: var(--paper);
+  max-width: 24ch;
+  margin-top: 1.6rem;
+}
+.ss-footer__links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 2.2rem;
+  margin-top: 1.7rem;
+}
+.ss-footer__links a{
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(247,243,239,.72);
+  transition: color .35s ease;
+}
+.ss-footer__links a:hover{ color: var(--coral); }
+.ss-footer__bottom{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-top: clamp(1.8rem, 3vw, 2.4rem);
+}
+.ss-footer__fine{
+  font-size: 0.76rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: rgba(247,243,239,.55);
+  max-width: 62ch;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   18. SCROLL REVEAL
+   ─────────────────────────────────────────────────────────────────────────── */
+.ss-reveal{
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 1.1s cubic-bezier(.2,.7,.3,1), transform 1.1s cubic-bezier(.2,.7,.3,1);
+  transition-delay: var(--d, 0ms);
+}
+.ss-reveal.is-in{ opacity: 1; transform: none; }
+.ss-page.no-js .ss-reveal{ opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce){
+  .ss-page *{
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+  .ss-reveal{ opacity: 1; transform: none; }
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   19. RESPONSIVE
+   ─────────────────────────────────────────────────────────────────────────── */
+/* Short laptop screens — keep both calls to action above the fold */
+@media (min-width: 1000px) and (max-height: 820px){
+  .ss-hero{ padding-top: 0.75rem; padding-bottom: 3.5rem; }
+  .ss-hero__title{ font-size: clamp(2rem, 3.5vw, 2.95rem); }
+  .ss-hero__copy > * + *{ margin-top: 1.05rem; }
+}
+
+@media (max-width: 1000px){
+  .ss-hero__grid{ grid-template-columns: 1fr; }
+  .ss-hero__media{ max-width: 460px; margin-top: 1rem; }
+  .ss-founder{ grid-template-columns: 1fr; }
+  .ss-founder__media{ position: static; max-width: 420px; }
+  .ss-split{ grid-template-columns: 1fr; }
+  .ss-split .ss-body:first-child{ margin-top: 0; }
+  .ss-pillars{ grid-template-columns: 1fr; gap: 0; }
+  .ss-pillar{ padding-top: 1.8rem; padding-bottom: 1.8rem; }
+  .ss-pillar:last-child{ padding-bottom: 0; }
+  .ss-list__item{ grid-template-columns: 3.2rem minmax(0,1fr); }
+  .ss-list__text{ grid-column: 2; margin-top: 0.7rem; }
+  .ss-footer__top{ grid-template-columns: 1fr; }
+}
+@media (max-width: 620px){
+  .ss-page{ font-size: 16px; }
+  .ss-nav{ padding: 1.15rem 0; }
+  .ss-nav__inner{ gap: 0.75rem; }
+  .ss-logo{ font-size: 1.05rem; }
+  .ss-nav__cta.ss-btn{ padding: 0.95em 1.3em; font-size: 0.62rem; letter-spacing: 0.11em; }
+  .ss-hero__title{ max-width: 100%; }
+  .ss-form__row{ grid-template-columns: 1fr; }
+  .ss-btn{ width: 100%; }
+  .ss-nav__cta.ss-btn{ width: auto; }   /* the nav CTA must stay compact */
+  .ss-footer__bottom{ flex-direction: column; }
+}
+</style>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<header class="ss-nav" id="ss-nav">
+  <div class="ss-wrap ss-nav__inner">
+
+    <!-- LOGO — replace this <a> block with:
+         <a class="ss-logo" href="#ss-top"><img src="LOGO-HORIZONTAL.svg" alt="Sparked &amp; Steady" style="height:34px"></a> -->
+    <a class="ss-logo" href="#ss-top" aria-label="Sparked and Steady — home">
+      <span class="ss-logo__spark">Sparked</span>
+      <span class="ss-logo__amp">&amp;</span>
+      <span class="ss-logo__steady">Steady</span>
+      <svg class="ss-logo__star" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 0c.55 6.3 5.15 10.9 12 12-6.85 1.1-11.45 5.7-12 12-.55-6.3-5.15-10.9-12-12C6.85 10.9 11.45 6.3 12 0z"/>
+      </svg>
+    </a>
+
+    <a class="ss-btn ss-nav__cta" href="#ss-waitlist">Join the Waitlist</a>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="ss-hero">
+  <div class="ss-wrap">
+    <div class="ss-hero__grid">
+
+      <div class="ss-hero__copy">
+        <span class="ss-eyebrow ss-reveal">Build a life that supports your spark</span>
+
+        <h1 class="ss-display ss-hero__title ss-reveal" style="--d:90ms">
+          Practical systems for the life <em>you</em> actually want.
+        </h1>
+
+        <p class="ss-lead ss-hero__lead ss-reveal" style="--d:180ms">
+          Support that helps women with ADHD live the life they want, in a way
+          that works for them. You have goals. You have ideas. You know what you
+          want to do.
+        </p>
+
+        <p class="ss-body ss-hero__lead ss-reveal" style="--d:240ms">
+          When ADHD gets in the way of your best intentions, even simple tasks can
+          feel harder than they should. You don't need more willpower. You need
+          practical systems that make follow-through easier.
+        </p>
+
+        <div class="ss-reveal" style="--d:320ms">
+          <a class="ss-btn" href="#ss-waitlist">Join the Waitlist</a>
+          <p class="ss-hero__note"><b>Early access</b> &middot; Free resources &middot; No spam</p>
+        </div>
+      </div>
+
+      <!-- PHOTO 1 of 3 -->
+      <figure class="ss-hero__media ss-framed ss-reveal" style="--d:260ms">
+        <div class="ss-photo ss-photo--portrait">
+          <img src="images/hero-lifestyle.jpg"
+               alt="A woman writing in a notebook at a sunlit desk">
+        </div>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BRAND STATEMENT ═══════════ -->
+<div class="ss-statement">
+  <div class="ss-wrap ss-statement__inner ss-reveal">
+    <div class="ss-statement__mark" aria-hidden="true"></div>
+    <p class="ss-statement__text">
+      Your brain is not the problem.<br>
+      <span style="color:var(--coral)">Simple beats perfect.</span>
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════ WHY SPARKED &amp; STEADY ═══════════ -->
+<section class="ss-section ss-section--soft" id="ss-why">
+  <div class="ss-wrap">
+    <div class="ss-split">
+
+      <div class="ss-head ss-reveal">
+        <span class="ss-eyebrow">Why Sparked &amp; Steady</span>
+        <h2 class="ss-h2">The gap between intention and action doesn't have to define your life.</h2>
+      </div>
+
+      <div class="ss-reveal" style="--d:120ms">
+        <p class="ss-body">
+          Most women with ADHD don't struggle because they don't care or don't
+          know what to do. They struggle because turning good intentions into
+          consistent action can be harder than most people realize.
+        </p>
+        <p class="ss-body">
+          Sparked &amp; Steady exists to help bridge that gap with practical
+          tools, simple systems, and a community that understands.
+        </p>
+        <p class="ss-body" style="margin-top:2.4rem">
+          <span class="ss-italic" style="font-size:1.2em;color:var(--navy)">
+            We help women with ADHD bridge the space between inspiration and implementation.
+          </span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHAT YOU'LL FIND ═══════════ -->
+<section class="ss-section ss-section--soft" style="padding-top:0" id="ss-find">
+  <div class="ss-wrap">
+
+    <div class="ss-head ss-reveal">
+      <span class="ss-eyebrow">What you'll find</span>
+      <h2 class="ss-h2">Five ways we make follow-through easier.</h2>
+    </div>
+
+    <div class="ss-list">
+
+      <div class="ss-list__item ss-reveal">
+        <span class="ss-list__num">01</span>
+        <h3 class="ss-list__title">Community</h3>
+        <p class="ss-list__text">
+          Walk this path with a community of women who understand the journey,
+          encourage one another, celebrate progress, and remind you that you
+          don't have to figure it all out alone.
+        </p>
+      </div>
+
+      <div class="ss-list__item ss-reveal">
+        <span class="ss-list__num">02</span>
+        <h3 class="ss-list__title">Tech &amp; Tips</h3>
+        <p class="ss-list__text">
+          Discover practical tech, AI tools, and simple tips that help lighten
+          your mental load, simplify everyday life, and make follow-through easier.
+        </p>
+      </div>
+
+      <div class="ss-list__item ss-reveal">
+        <span class="ss-list__num">03</span>
+        <h3 class="ss-list__title">Mini Modules</h3>
+        <p class="ss-list__text">
+          Short, practical learning you can access on demand, designed to help
+          you turn ideas into action.
+        </p>
+      </div>
+
+      <div class="ss-list__item ss-reveal">
+        <span class="ss-list__num">04</span>
+        <h3 class="ss-list__title">Tools &amp; Templates</h3>
+        <p class="ss-list__text">
+          Ready-to-use tools and templates designed to save you time, reduce
+          overwhelm, and make getting started easier.
+        </p>
+      </div>
+
+      <div class="ss-list__item ss-reveal">
+        <span class="ss-list__num">05</span>
+        <h3 class="ss-list__title">New Content Every Month</h3>
+        <p class="ss-list__text">
+          Keep learning, growing, and moving forward with fresh ideas, practical
+          resources, and new content every month.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EDITORIAL BAND — PHOTO 2 of 3 ═══════════ -->
+<div class="ss-band">
+  <div class="ss-wrap">
+    <figure class="ss-photo ss-photo--band ss-reveal">
+      <img src="images/editorial-band.jpg"
+           alt="A calm, uncluttered living room with an open notebook on a low oak table">
+    </figure>
+  </div>
+</div>
+
+<!-- ═══════════ OUR BELIEFS ═══════════ -->
+<section class="ss-section ss-section--navy" id="ss-beliefs">
+  <div class="ss-wrap">
+    <div class="ss-split">
+
+      <div class="ss-reveal">
+        <span class="ss-eyebrow" style="margin-bottom:1.5rem">Our beliefs</span>
+        <p class="ss-beliefs__quote">
+          The goal isn't to change who you are. It's to build a life that
+          supports <em>who you're becoming.</em>
+        </p>
+      </div>
+
+      <ul class="ss-creed ss-reveal" style="--d:120ms">
+        <li>Simple tools you'll actually use.</li>
+        <li>Practical systems that work with the way your brain works.</li>
+        <li>A supportive community.</li>
+        <li>Encouragement without shame.</li>
+        <li>Progress over perfection.</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHAT WE'RE BUILDING ═══════════ -->
+<section class="ss-section ss-section--cream" id="ss-building">
+  <div class="ss-wrap">
+
+    <div class="ss-head ss-reveal">
+      <span class="ss-eyebrow">What we're building</span>
+      <h2 class="ss-h2">A calmer, more manageable way forward.</h2>
+    </div>
+
+    <div class="ss-pillars">
+      <div class="ss-pillar ss-reveal">
+        <span class="ss-pillar__label">Our purpose</span>
+        <p class="ss-pillar__text">
+          To help women with ADHD bridge the space between inspiration and
+          implementation.
+        </p>
+      </div>
+      <div class="ss-pillar ss-reveal" style="--d:110ms">
+        <span class="ss-pillar__label">Our promise</span>
+        <p class="ss-pillar__text">
+          Systems designed to reduce overwhelm, simplify decisions, and create
+          consistency in the moments that matter most.
+        </p>
+      </div>
+      <div class="ss-pillar ss-reveal" style="--d:220ms">
+        <span class="ss-pillar__label">Our philosophy</span>
+        <p class="ss-pillar__text">
+          Build a life that supports your spark — steadily, and on your own terms.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ MEET THE FOUNDER ═══════════ -->
+<section class="ss-section ss-section--soft" id="ss-founder">
+  <div class="ss-wrap">
+    <div class="ss-founder">
+
+      <!-- PHOTO 3 of 3 — PLACEHOLDER.
+           This is a stand-in image. Replace it with a real photograph of
+           Wendy Morrow Turner before the site goes live. -->
+      <figure class="ss-founder__media ss-framed ss-reveal">
+        <div class="ss-photo ss-photo--founder">
+          <img src="images/founder-portrait.jpg"
+               alt="Portrait of Wendy Morrow Turner, founder of Sparked &amp; Steady">
+        </div>
+      </figure>
+
+      <div class="ss-founder__copy ss-reveal" style="--d:120ms">
+        <span class="ss-eyebrow">Meet the founder</span>
+        <h2 class="ss-h2" style="margin-top:1.4rem">I didn't need more willpower. I needed systems that worked with my brain.</h2>
+
+        <p class="ss-body">
+          I didn't start my career as an entrepreneur. I started as an educator,
+          working with children with ADHD and helping them find ways to succeed
+          in a world that wasn't always designed for how their brains worked.
+        </p>
+        <p class="ss-body">
+          Later, I became an entrepreneur, building a successful children's
+          clothing company and eventually leading a thriving real estate team in
+          Greenville, South Carolina. From the outside, it looked like I had it
+          all together.
+        </p>
+
+        <p class="ss-founder__pull">Then, in my 40s, I was diagnosed with ADHD.</p>
+
+        <p class="ss-body">
+          Suddenly, so many things made sense. The constant mental clutter. The
+          overwhelm. The unfinished projects. The feeling that no matter how hard
+          I worked, I couldn't seem to create the consistency I wanted.
+        </p>
+        <p class="ss-body">
+          I realized I didn't need more willpower. I needed systems that worked
+          with my brain instead of against it. That's why I created Sparked &amp; Steady.
+        </p>
+        <p class="ss-body">
+          My hope is that the tools, systems, and community you'll find here help
+          you close the gap between who you are today and who you know you're
+          capable of becoming.
+        </p>
+
+        <div class="ss-sign">
+          <p class="ss-body" style="margin-bottom:.4rem">Warmly,</p>
+          <p class="ss-sign__name">Wendy Morrow Turner</p>
+          <p class="ss-sign__role">Founder, Sparked &amp; Steady</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WAITLIST ═══════════ -->
+<section class="ss-section ss-section--blush ss-waitlist" id="ss-waitlist">
+  <div class="ss-wrap ss-wrap--narrow">
+
+    <div class="ss-head ss-reveal" style="margin:0 auto">
+      <span class="ss-eyebrow">The waitlist</span>
+      <h2 class="ss-h2">Be the first to know.</h2>
+    </div>
+
+    <p class="ss-body ss-reveal" style="--d:100ms;margin-top:1.8rem">
+      Sparked &amp; Steady is just getting started. Join the waitlist for early
+      access, behind-the-scenes updates, free resources, and first access to new
+      tools, courses, and our community as they're released.
+    </p>
+
+    <!-- ─────────────────────────────────────────────────────────────────────
+         FORM — connect to your email platform.
+         Option A: set action="" to your provider's POST endpoint (Mailchimp,
+                   Flodesk, ConvertKit, Kit, MailerLite all provide one).
+         Option B: delete this <form> and paste your provider's embed code here.
+         ───────────────────────────────────────────────────────────────────── -->
+    <form class="ss-form ss-reveal" id="ss-form" style="--d:170ms" method="post" action="" novalidate>
+      <div class="ss-form__row">
+        <label class="ss-field">
+          <span class="ss-field__label">First Name</span>
+          <input type="text" name="FNAME" autocomplete="given-name" placeholder="Wendy" required>
+        </label>
+        <label class="ss-field">
+          <span class="ss-field__label">Email Address</span>
+          <input type="email" name="EMAIL" autocomplete="email" placeholder="you@example.com" required>
+        </label>
+      </div>
+
+      <div class="ss-form__actions">
+        <button type="submit" class="ss-btn">Join the Waitlist</button>
+        <p class="ss-form__fine">
+          We'll only send things worth opening. Unsubscribe any time.
+        </p>
+      </div>
+    </form>
+
+    <p class="ss-form__msg" id="ss-form-msg">
+      Thank you — you're on the list.<br>Watch your inbox for what's coming next.
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="ss-footer" id="ss-footer">
+  <div class="ss-wrap">
+
+    <div class="ss-footer__top">
+      <div>
+        <a class="ss-logo" href="#ss-top" aria-label="Sparked and Steady — home">
+          <span class="ss-logo__spark">Sparked</span>
+          <span class="ss-logo__amp">&amp;</span>
+          <span class="ss-logo__steady">Steady</span>
+          <svg class="ss-logo__star" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 0c.55 6.3 5.15 10.9 12 12-6.85 1.1-11.45 5.7-12 12-.55-6.3-5.15-10.9-12-12C6.85 10.9 11.45 6.3 12 0z"/>
+          </svg>
+        </a>
+        <p class="ss-footer__tag">
+          Helping women with ADHD close the gap between intention and action.
+        </p>
+      </div>
+
+      <div>
+        <span class="ss-eyebrow" style="color:var(--sage)">Information</span>
+        <nav class="ss-footer__links" aria-label="Footer">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-use">Terms of Use</a>
+          <a href="/disclaimer">Disclaimer</a>
+        </nav>
+        <p style="margin-top:2rem">
+          <a class="ss-link" href="#ss-waitlist" style="color:var(--coral)">Join the Waitlist</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="ss-footer__bottom">
+      <p class="ss-footer__fine">
+        Sparked &amp; Steady provides educational content only and is not medical
+        or mental health advice. All content is protected intellectual property
+        and may not be copied, shared, reproduced, resold, used to create
+        derivative works, or used to train AI systems without written permission.
+      </p>
+      <p class="ss-footer__fine" style="white-space:nowrap">
+        &copy; <span id="ss-year">2026</span> Sparked &amp; Steady
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.getElementById('ss-top');
+  if (!root) return;
+
+  /* ── Current year ─────────────────────────────────────────────── */
+  var yr = document.getElementById('ss-year');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ── Sticky nav state ─────────────────────────────────────────── */
+  var nav = document.getElementById('ss-nav');
+  if (nav) {
+    var onScroll = function () {
+      if (window.pageYOffset > 24) nav.classList.add('is-stuck');
+      else nav.classList.remove('is-stuck');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ── Smooth anchor scrolling (scoped to this block) ───────────── */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href');
+    if (!id || id === '#') return;
+    var target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    var top = target.getBoundingClientRect().top + window.pageYOffset - (nav ? nav.offsetHeight : 0);
+    window.scrollTo({ top: top, behavior: reduce ? 'auto' : 'smooth' });
+  });
+
+  /* ── Scroll reveal ──────────────────────────────────────────────
+     The hero reveals immediately: on a short laptop screen its call to
+     action can sit below the observer's trigger line and would otherwise
+     never fade in.                                                     */
+  var items = root.querySelectorAll('.ss-reveal');
+  var hero  = root.querySelector('.ss-hero');
+  if (!('IntersectionObserver' in window) || reduce) {
+    for (var i = 0; i < items.length; i++) items[i].classList.add('is-in');
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
+    for (var j = 0; j < items.length; j++) {
+      if (hero && hero.contains(items[j])) items[j].classList.add('is-in');
+      else io.observe(items[j]);
+    }
+  }
+
+  /* ── Waitlist form ────────────────────────────────────────────────
+     Only intercepts when no action URL is set, so the page can be
+     demoed before the email platform is connected. Once you add an
+     action="" URL (or paste a provider embed), this does nothing.   */
+  var form = document.getElementById('ss-form');
+  var msg  = document.getElementById('ss-form-msg');
+  if (form && msg) {
+    form.addEventListener('submit', function (e) {
+      if (form.getAttribute('action')) return;   // real endpoint — let it post
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      form.style.display = 'none';
+      msg.classList.add('is-visible');
+    });
+  }
+})();
+</script>
+
+</div>
+<!-- ═══════════ END OF PASTE-READY BLOCK ═══════════ -->
+
+</body>
+</html>

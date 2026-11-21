@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="LAROID-Textilveredelung GmbH in Kiel: Siebdruck, Digital-Direktdruck, Transfers, Bestickung und Sublimationsdruck seit 2002.">
+<style>*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>LAROID Textilveredelung</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@85..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#070A07;
+  --ground-2:#0B100B;
+  --surface:#10160F;
+  --surface-2:#161E15;
+  --text:#EAF0E4;
+  --muted:#96A492;
+  --dim:#6C7A69;
+  --accent:#80BA26;
+  --accent-deep:#4C7614;
+  --accent-ink:#0A0F05;
+  --line:rgba(234,240,228,.10);
+  --line-green:rgba(128,186,38,.22);
+  --gutter:clamp(20px,5vw,64px);
+  --maxw:1240px;
+  --ff-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --ff-body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+  --ff-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--ground);
+  color:var(--text);
+  font-family:var(--ff-body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+::selection{background:var(--accent);color:var(--accent-ink)}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ---------- type ---------- */
+.display{
+  font-family:var(--ff-display);
+  font-variation-settings:"wdth" 112,"wght" 800;
+  text-transform:uppercase;
+  line-height:.92;
+  letter-spacing:-.01em;
+  text-wrap:balance;
+  margin:0;
+}
+h1.display{font-size:clamp(2.6rem,7.4vw,5.6rem)}
+h2.display{font-size:clamp(2rem,4.4vw,3.4rem)}
+h3{font-family:var(--ff-display);font-variation-settings:"wdth" 105,"wght" 700;text-transform:uppercase;letter-spacing:.01em;margin:0;line-height:1.05}
+p{margin:0}
+.lede{font-size:clamp(1.05rem,1.5vw,1.22rem);color:#C6D0BF;max-width:64ch}
+.body-text{color:var(--muted);max-width:66ch}
+.eyebrow{
+  font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);display:flex;align-items:center;gap:.9rem;margin:0;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line-green),transparent)}
+.green{color:var(--accent)}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(7,10,7,.82);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.header-in{display:flex;align-items:center;gap:2rem;min-height:82px;justify-content:space-between}
+.logo img{height:46px;width:auto}
+nav.main{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap}
+nav.main a{
+  font-family:var(--ff-mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  padding-block:.4rem;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;
+}
+nav.main a:hover{color:var(--text);border-color:var(--accent)}
+.btn{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-family:var(--ff-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.85rem 1.4rem;border:1px solid var(--accent);color:var(--accent);
+  background:transparent;transition:background .22s,color .22s,transform .22s;
+}
+.btn:hover{background:var(--accent);color:var(--accent-ink)}
+.btn--solid{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn--solid:hover{background:#95D12E;border-color:#95D12E}
+.btn--ghost{border-color:var(--line);color:var(--text)}
+.btn--ghost:hover{background:transparent;border-color:var(--accent);color:var(--accent)}
+.btn .arrow{transition:transform .22s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-block:clamp(4rem,9vw,8.5rem) clamp(3.5rem,7vw,6rem);overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:52% 46%;filter:brightness(.7) saturate(.95)}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(7,10,7,.9) 0%,rgba(7,10,7,.8) 36%,rgba(7,10,7,.42) 70%,rgba(7,10,7,.28) 100%),
+    linear-gradient(180deg,rgba(7,10,7,.8) 0%,rgba(7,10,7,.12) 36%,rgba(7,10,7,.5) 84%,var(--ground) 100%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(70% 80% at 88% 18%,rgba(128,186,38,.16),transparent 62%);
+}
+.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,1fr);max-width:min(var(--maxw),1100px)}
+.hero-in > div{max-width:62ch}
+.hero h1{margin-block:1.6rem 1.5rem}
+.hero h1 .stroke{
+  display:block;color:transparent;-webkit-text-stroke:1.5px var(--accent);
+}
+.hero .lede,.hero .body-text{text-shadow:0 1px 18px rgba(7,10,7,.75)}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+.collection{
+  display:inline-flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:2.6rem;
+  border-left:2px solid var(--accent);padding:.45rem 0 .45rem .9rem;
+  font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+}
+.collection strong{color:var(--text);font-weight:500}
+.collection a{color:var(--accent);border-bottom:1px solid var(--line-green)}
+.collection a:hover{border-color:var(--accent)}
+
+/* facts strip */
+.facts{border-block:1px solid var(--line);background:var(--ground-2)}
+.facts-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.fact{background:var(--ground-2);padding:1.7rem clamp(1rem,2.2vw,2rem)}
+.fact dt{font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:.5rem}
+.fact dd{margin:0;font-family:var(--ff-display);font-variation-settings:"wdth" 108,"wght" 700;text-transform:uppercase;font-size:1.32rem;line-height:1.1}
+.fact dd span{color:var(--accent)}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(4rem,8vw,7rem)}
+.section-head{display:grid;gap:1.4rem;margin-bottom:clamp(2.4rem,4vw,3.6rem)}
+.section-head .row{display:flex;gap:2rem;justify-content:space-between;align-items:end;flex-wrap:wrap}
+
+/* techniques */
+.tech{border-top:1px solid var(--line)}
+.tech-item{border-bottom:1px solid var(--line)}
+.tech-item summary{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,3vw,2.4rem);
+  padding-block:1.5rem;cursor:pointer;list-style:none;transition:padding-left .25s;
+}
+.tech-item summary::-webkit-details-marker{display:none}
+.tech-item summary:hover{padding-left:.6rem}
+.tech-item summary:hover .tech-name{color:var(--accent)}
+.tech-code{font-family:var(--ff-mono);font-size:.74rem;letter-spacing:.14em;color:var(--dim)}
+.tech-name{font-family:var(--ff-display);font-variation-settings:"wdth" 108,"wght" 700;text-transform:uppercase;
+  font-size:clamp(1.25rem,2.6vw,2rem);line-height:1.1;transition:color .2s}
+.tech-plus{width:26px;height:26px;position:relative;flex:none}
+.tech-plus::before,.tech-plus::after{content:"";position:absolute;background:var(--accent);transition:transform .3s,opacity .3s}
+.tech-plus::before{left:0;right:0;top:12.5px;height:1px}
+.tech-plus::after{top:0;bottom:0;left:12.5px;width:1px}
+.tech-item[open] .tech-plus::after{transform:scaleY(0);opacity:0}
+.tech-item[open] .tech-name{color:var(--accent)}
+.tech-body{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);
+  padding:0 0 2.4rem clamp(0px,3vw,2.6rem);border-left:1px solid var(--line-green);margin-left:clamp(0px,2vw,1.4rem);
+}
+.spec{display:grid;gap:0;align-content:start;border-top:1px solid var(--line)}
+.spec div{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding-block:.65rem;border-bottom:1px solid var(--line)}
+.spec dt{font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding-top:.25rem}
+.spec dd{margin:0;font-size:.95rem;color:#C6D0BF}
+.gots{
+  display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);border:1px solid var(--line-green);padding:.35rem .7rem;margin-top:1.2rem;
+}
+.gots::before{content:"";width:6px;height:6px;background:var(--accent);border-radius:50%}
+
+/* range */
+.range{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line)}
+.range a{position:relative;overflow:hidden;background:var(--surface);display:block}
+.range img{aspect-ratio:3/4;object-fit:cover;object-position:center 22%;filter:grayscale(.32) contrast(1.04) brightness(.84);
+  transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .5s}
+.range a:hover img{transform:scale(1.04);filter:grayscale(0) contrast(1.04) brightness(1)}
+.range .label{position:absolute;inset:auto 0 0 0;padding:1.2rem;display:flex;align-items:end;justify-content:space-between;gap:1rem;
+  background:linear-gradient(0deg,rgba(7,10,7,.92),transparent)}
+.range .label h3{font-size:1.08rem}
+.range .label .idx{font-family:var(--ff-mono);font-size:1rem;color:var(--accent);transition:transform .3s;display:block}
+.range a:hover .idx{transform:translateX(5px)}
+
+/* sports */
+.sports{background:var(--surface);border-block:1px solid var(--line);position:relative;overflow:hidden}
+.sports::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,rgba(128,186,38,.05) 0 1px,transparent 1px 64px);pointer-events:none}
+.sports-in{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(2rem,5vw,4rem);align-items:center}
+.sports-in img{width:clamp(96px,11vw,140px)}
+.sports p{margin-top:1.2rem}
+.sports-in .btn{justify-self:start;white-space:nowrap}
+
+/* reviews */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(1.2rem,2.5vw,2rem)}
+.review{border-top:2px solid var(--accent);padding-top:1.3rem}
+.review .stars{color:var(--accent);letter-spacing:.22em;font-size:.85rem;margin-bottom:.7rem}
+.review p{color:#C6D0BF;font-size:.98rem}
+.review cite{display:block;margin-top:1rem;font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--dim);font-style:normal}
+
+/* contact + form */
+.contact{background:var(--ground-2);border-top:1px solid var(--line)}
+.contact-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,3vw,2.6rem);align-items:start}
+.contact-card{
+  background:linear-gradient(150deg,var(--accent-deep),var(--accent) 78%);
+  color:var(--accent-ink);padding:clamp(1.8rem,3.4vw,2.8rem);display:grid;gap:1.4rem;align-content:start;
+}
+.contact-card .eyebrow{color:var(--accent-ink)}
+.contact-card .eyebrow::after{background:linear-gradient(90deg,rgba(10,15,5,.4),transparent)}
+.contact-card h2{font-size:clamp(1.7rem,2.8vw,2.4rem)}
+.contact-card p{color:rgba(10,15,5,.8);max-width:40ch}
+.contact-list{display:grid;gap:0;margin:.4rem 0 0}
+.contact-list div{display:grid;gap:.15rem;padding-block:.85rem;border-top:1px solid rgba(10,15,5,.22)}
+.contact-list dt{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(10,15,5,.65)}
+.contact-list dd{margin:0;font-size:1rem;line-height:1.5}
+.contact-list a{border-bottom:1px solid rgba(10,15,5,.35)}
+.contact-list a:hover{border-color:var(--accent-ink)}
+
+.form-panel{background:var(--surface);border:1px solid var(--line);padding:clamp(1.6rem,3vw,2.6rem)}
+.form-title{font-size:1.3rem}
+.form-intro{color:var(--muted);font-size:.95rem;margin-top:.7rem;max-width:52ch}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem;margin-top:1.8rem}
+.field{display:grid;gap:.45rem;min-width:0}
+.field--full{grid-column:1/-1}
+.field label,.form label{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.form input[type=text],.form input[type=email],.form input[type=tel],.form select,.form textarea{
+  width:100%;background:rgba(234,240,228,.04);border:1px solid var(--line);color:var(--text);
+  font-family:var(--ff-body);font-size:.95rem;padding:.8rem .95rem;border-radius:0;
+  transition:border-color .2s,background .2s;
+}
+.form textarea{resize:vertical;min-height:110px;line-height:1.6}
+.form select{
+  appearance:none;-webkit-appearance:none;padding-right:2.4rem;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2380BA26' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center;background-size:11px;
+}
+.form select option{background:var(--surface-2);color:var(--text)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--accent);background:rgba(128,186,38,.06)}
+.form input[aria-invalid="true"],.form textarea[aria-invalid="true"]{border-color:#D66A4A}
+.form ::placeholder{color:#5F6C5D}
+.check{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:start;cursor:pointer}
+.check span{font-family:var(--ff-body);font-size:.85rem;line-height:1.55;letter-spacing:0;text-transform:none;color:var(--muted)}
+.check a{color:var(--accent);border-bottom:1px solid var(--line-green)}
+.check input{width:18px;height:18px;margin-top:.15rem;accent-color:var(--accent);flex:none}
+.check[data-invalid="true"] span{color:#E0917A}
+.form-foot{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center;justify-content:space-between;margin-top:.4rem}
+.form-note{font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.form-note[data-state="error"]{color:#E0917A}
+.form-note[data-state="busy"]{color:var(--accent)}
+.form-done{display:grid;gap:1rem;justify-items:start;padding-block:1.6rem}
+.form-done .done-mark{
+  width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--accent);
+  color:var(--accent);font-size:1.3rem;
+}
+.form-done h3{font-size:1.2rem}
+.form-done p{color:var(--muted);max-width:46ch}
+.form-done a{color:var(--accent);border-bottom:1px solid var(--line-green)}
+
+/* footer */
+footer{background:var(--ground-2);border-top:1px solid var(--line);padding-block:clamp(3rem,6vw,4.5rem) 2rem}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr;gap:clamp(1.6rem,3vw,2.6rem)}
+.foot-grid img.flogo{height:52px;width:auto;margin-bottom:1.4rem}
+.foot-h{font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem}
+.foot-list{display:grid;gap:.55rem;font-size:.92rem;color:var(--muted);padding:0;margin:0;list-style:none}
+.foot-list a:hover{color:var(--accent)}
+address{font-style:normal;color:var(--muted);font-size:.94rem;line-height:1.8}
+address a:hover{color:var(--accent)}
+.dealer{margin-top:1.6rem;display:flex;flex-direction:column;gap:.8rem;align-items:flex-start}
+.dealer img{height:34px;width:auto;opacity:.9}
+.legal{margin-top:clamp(2.4rem,5vw,3.5rem);padding-top:1.5rem;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;align-items:center}
+.legal nav{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem}
+.legal a,.legal span{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.legal a:hover{color:var(--accent)}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero-bg img{object-position:58% 46%}
+  .facts-in{grid-template-columns:repeat(2,1fr)}
+  .tech-body{grid-template-columns:1fr}
+  .sports-in{grid-template-columns:1fr;text-align:left}
+  .contact-in{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:repeat(2,1fr)}
+  .header-in{flex-wrap:wrap;padding-block:.8rem;gap:.8rem 1.2rem}
+  nav.main{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;gap:1.2rem;
+    border-top:1px solid var(--line);padding-top:.5rem;scrollbar-width:none}
+  nav.main::-webkit-scrollbar{display:none}
+  nav.main a{white-space:nowrap}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .facts-in{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .form-foot{align-items:flex-start;flex-direction:column}
+  .header-in{min-height:70px}
+  .logo img{height:38px}
+  .tech-item summary{grid-template-columns:1fr auto;gap:1rem}
+  .btn{padding:.75rem 1.1rem;font-size:.72rem}
+  .tech-code{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="LAROID – Startseite"><img src="assets/logo.png" alt="LAROID – Textile Kommunikation"></a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="#technik">Textildruck</a>
+      <a href="#sortiment">Sortiment</a>
+      <a href="#sports">Laroid Sports</a>
+      <a href="https://www.laroid.de/gots/">GOTS</a>
+      <a href="https://www.laroid.de/team/">Team</a>
+      <a href="https://shop-laroid.de/">Shop</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn--solid" href="#kontakt">Anfrage <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="assets/workshop.webp" alt="">
+    </div>
+    <div class="wrap hero-in">
+      <div>
+        <p class="eyebrow">Textilveredelung aus Kiel · seit 2002</p>
+        <h1 class="display">Textildruck<br>im <span class="green">Norden</span><br><span class="stroke">Laroid</span></h1>
+        <p class="body-text">Ob Siebdruck, Siebdruck-Transfers, (DTF) Digital-Transfers, Digital-Direktdruck, Plott-Transfers, Sublimationsdruck oder Bestickung: Wir haben für jedes Ihrer Projekte die richtige Drucktechnik – eine Qualität gepaart aus Technik, Service, Kompetenz und einem gesunden Schuss Menschlichkeit.</p>
+        <div class="hero-actions">
+          <a class="btn btn--solid" href="#technik">Drucktechniken <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="#kontakt">Projekt besprechen</a>
+        </div>
+        <p class="collection">Markenpräsentation <strong>Herbst / Winter 26</strong> · <a href="https://stanleystella.com/de-eu">Stanley/Stella</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <dl class="wrap facts-in">
+      <div class="fact"><dt>Seit</dt><dd>Januar <span>2002</span></dd></div>
+      <div class="fact"><dt>Standort</dt><dd>Flughafen <span>Kiel</span></dd></div>
+      <div class="fact"><dt>Verfahren</dt><dd><span>Sechs</span> Techniken</dd></div>
+      <div class="fact"><dt>Zertifiziert</dt><dd><span>GOTS</span>-Produktion</dd></div>
+    </dl>
+  </div>
+
+  <section id="technik" class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Veredelung</p>
+      <div class="row">
+        <h2 class="display">Für jedes Projekt<br>die richtige Technik</h2>
+        <p class="body-text" style="max-width:38ch">Sechs Verfahren unter einem Dach – wir wählen gemeinsam mit Ihnen aus, was zu Motiv, Material und Auflage passt.</p>
+      </div>
+    </div>
+
+    <div class="tech">
+      <details class="tech-item" open>
+        <summary><span class="tech-code">DTG</span><span class="tech-name">Digital-Direktdruck</span><span class="tech-plus" aria-hidden="true"></span></summary>
+        <div class="tech-body">
+          <div>
+            <p class="body-text">Für aufwendige Motive – Fotodruck, vielfarbige Logos, Verläufe – in kleinerer Auflage. Es entstehen hochwertige, haltbare Textildrucke, die vor allem in Mode, Promotion und Merchandising eingesetzt werden. Da wir zertifizierte Tinten auf Wasserbasis verwenden, sind GOTS-zertifizierte Produktionen möglich.</p>
+            <span class="gots">GOTS-Produktion möglich</span>
+          </div>
+          <dl class="spec">
+            <div><dt>Auflage</dt><dd>ab 1 Stück, ideal für klein bis mittel</dd></div>
+            <div><dt>Textil</dt><dd>hell, dunkel und farbig · Baumwolle und Mischgewebe</dd></div>
+            <div><dt>Druckfläche</dt><dd>max. 40 × 60 cm</dd></div>
+            <div><dt>Wäsche</dt><dd>gute Waschbeständigkeit bis 40 °C</dd></div>
+            <div><dt>Vorkosten</dt><dd>keine</dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="tech-item">
+        <summary><span class="tech-code">SIEB</span><span class="tech-name">Direktsiebdruck</span><span class="tech-plus" aria-hidden="true"></span></summary>
+        <div class="tech-body">
+          <div>
+            <p class="body-text">Der Klassiker unter den Textildruckverfahren und bei LAROID ein Dauerrenner: deckende, leuchtende Farben, eine besonders für große Auflagen kostengünstige Produktion und eine Vielzahl von Effekten. Gedruckt wird direkt auf das Textil – pro Farbe entstehen Film und Siebschablone, auf farbigen Textilien kommt ein Untergrundweiß hinzu.</p>
+            <span class="gots">GOTS-Produktion möglich</span>
+          </div>
+          <dl class="spec">
+            <div><dt>Auflage</dt><dd>speziell große Auflagen kostengünstig</dd></div>
+            <div><dt>Farben</dt><dd>jede Pantone-Farbe druckbar</dd></div>
+            <div><dt>Effekte</dt><dd>Glitter, Metallic, Aufschäumeffekt, Dickschichtdruck, phosphoreszierend</dd></div>
+            <div><dt>Vorstufe</dt><dd>je Farbe ein Film und ein Sieb</dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="tech-item">
+        <summary><span class="tech-code">TRANS</span><span class="tech-name">Gedruckte Transfers</span><span class="tech-plus" aria-hidden="true"></span></summary>
+        <div class="tech-body">
+          <div>
+            <p class="body-text">Wenn Corporate Design besondere Platzierungen vorgibt oder Ware auf Abruf gewünscht ist, empfehlen wir den Transferdruck: hohe Deckkraft, hohe Strapazierfähigkeit, unbegrenzt viele Farben in feiner Auflösung. Beim Siebdruck-Transfer wird eine Transferfolie spiegelverkehrt bedruckt und mit Hitze auf das Textil übertragen – beim DTF-Transfer (Direct To Foil) geschieht das im Digitaldruck.</p>
+            <span class="gots">GOTS-Produktion möglich</span>
+          </div>
+          <dl class="spec">
+            <div><dt>Stärke</dt><dd>schwierige Veredelungspositionen nach CI/CD</dd></div>
+            <div><dt>Farben</dt><dd>unbegrenzt · Pantone beim Siebdruck-Transfer</dd></div>
+            <div><dt>Logistik</dt><dd>Ware auf Abruf produzierbar</dd></div>
+            <div><dt>Varianten</dt><dd>Siebdruck-Transfer · DTF-Digital-Transfer</dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="tech-item">
+        <summary><span class="tech-code">PLOTT</span><span class="tech-name">Plott-Transfers</span><span class="tech-plus" aria-hidden="true"></span></summary>
+        <div class="tech-body">
+          <div>
+            <p class="body-text">Der Transferdruck mit Flock- und Flexfolien ist ein sehr hochwertiges Verfahren: sehr lange Haltbarkeit, hohe Farbdeckung und Farbbrillanz. Ein Schneideplotter schneidet das Motiv seitenverkehrt aus der Folie, überschüssiges Material wird entgittert, dann überträgt die Transferpresse das Motiv auf das Textil. Da kaum Rüstzeiten entstehen, lohnt sich die Technik schon beim Einzelstück.</p>
+          </div>
+          <dl class="spec">
+            <div><dt>Auflage</dt><dd>Einzelstücke und Kleinauflagen</dd></div>
+            <div><dt>Material</dt><dd>Flock- und Flexfolie</dd></div>
+            <div><dt>Mehrfarbig</dt><dd>möglich, wenn Motivteile trennbar sind (z. B. Buchstaben)</dd></div>
+            <div><dt>Prüfung</dt><dd>Eignung des Motivs klären wir im Einzelfall</dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="tech-item">
+        <summary><span class="tech-code">STICK</span><span class="tech-name">Bestickung</span><span class="tech-plus" aria-hidden="true"></span></summary>
+        <div class="tech-body">
+          <div>
+            <p class="body-text">Besondere Optik, hohe Qualität, sehr lange Haltbarkeit: bestickte Textilien lassen sich häufig und bei hohen Temperaturen ohne Qualitätsverlust waschen. Bei Fleece oder Wolle ist der Stick die einzige Möglichkeit hochwertiger Veredelung. Anhand Ihrer Vorlage erstellen wir das Stickprogramm – archiviert, damit eine Nachbestellung sofort laufen kann.</p>
+            <span class="gots">GOTS-Produktion möglich</span>
+          </div>
+          <dl class="spec">
+            <div><dt>Ideal für</dt><dd>Handtücher, hochwertige Arbeitsbekleidung, Fleece und Wolle</dd></div>
+            <div><dt>Preis</dt><dd>abhängig von Stichzahl und Stickposition</dd></div>
+            <div><dt>Nachbestellung</dt><dd>Stickprogramme werden digital archiviert</dd></div>
+            <div><dt>Technik</dt><dd>Hightech-Stickmaschinen im Haus</dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="tech-item">
+        <summary><span class="tech-code">SUBLI</span><span class="tech-name">Sublimationsdruck</span><span class="tech-plus" aria-hidden="true"></span></summary>
+        <div class="tech-body">
+          <div>
+            <p class="body-text">Ideal für Motive mit vielen Farben oder Farbverläufen. Als digitales Druckverfahren fallen keine Vorkosten an – ein Foto im Einzelstück ist damit kostengünstig realisierbar. Neben Textilien lassen sich auch feste Objekte veredeln, sofern sie für Sublimation geeignet sind.</p>
+          </div>
+          <dl class="spec">
+            <div><dt>Textil</dt><dd>helle Textilien ohne Baumwollanteil – Trikots, Funktionsshirts, Softshelljacken</dd></div>
+            <div><dt>Objekte</dt><dd>Becher, Frühstücksbretter, Thermosflaschen</dd></div>
+            <div><dt>Vorkosten</dt><dd>keine · auch Einzelstücke</dd></div>
+            <div><dt>Motive</dt><dd>Fotos, Farbverläufe, vielfarbige Grafiken</dd></div>
+          </dl>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="sortiment" class="wrap" style="padding-top:0">
+    <div class="section-head">
+      <p class="eyebrow">Sortiment</p>
+      <div class="row">
+        <h2 class="display">Unser Sortiment</h2>
+        <p class="body-text" style="max-width:40ch">Von der Vereinsbekleidung bis zur Arbeitskleidung – beraten, veredelt und geliefert aus Kiel.</p>
+      </div>
+    </div>
+    <div class="range">
+      <a href="https://www.laroid.de/sortiment/sportswear/"><img src="assets/cat-sports.webp" alt="Sportlerin in Sport-Bustier und Leggings"><div class="label"><h3>Sportswear</h3><span class="idx" aria-hidden="true">&#8594;</span></div></a>
+      <a href="https://www.laroid.de/sortiment/gastro-wear/"><img src="assets/cat-gastro.webp" alt="Mann in olivfarbener Schürze mit besticktem Baum-Logo, hält eine Holzkiste mit frischen Kräutern"><div class="label"><h3>Gastro Wear</h3><span class="idx" aria-hidden="true">&#8594;</span></div></a>
+      <a href="https://www.laroid.de/sortiment/businesswear/"><img src="assets/cat-business.webp" alt="Mann im anthrazitfarbenen Anzug mit weißem Hemd und Krawatte"><div class="label"><h3>Businesswear</h3><span class="idx" aria-hidden="true">&#8594;</span></div></a>
+      <a href="https://www.laroid.de/sortiment/workwear/"><img src="assets/cat-work.webp" alt="Zwei Personen in blauen Arbeitslatzhosen mit Werkzeug in den Beintaschen"><div class="label"><h3>Workwear</h3><span class="idx" aria-hidden="true">&#8594;</span></div></a>
+      <a href="https://www.laroid.de/sortiment/"><img src="assets/cat-merch.webp" alt="Mann in einem weißen T-Shirt mit V-Ausschnitt"><div class="label"><h3>Merchandise</h3><span class="idx" aria-hidden="true">&#8594;</span></div></a>
+    </div>
+  </section>
+
+  <section id="sports" class="sports">
+    <div class="wrap sports-in">
+      <img src="assets/sports.png" alt="LAROID Sports Logo">
+      <div>
+        <p class="eyebrow">Laroid Sports</p>
+        <h2 class="display" style="margin-top:1rem;font-size:clamp(1.7rem,3.4vw,2.6rem)">Die Komplettlösung für Vereine</h2>
+        <p class="body-text">Individuell produzierte Teamwear, Fanartikel und ein eigener Vereins-Shop: Mit LAROID SPORTS erhaltet ihr alles aus einer Hand. Persönlich betreut und direkt bei uns in Kiel produziert.</p>
+      </div>
+      <a class="btn" href="#kontakt">Laroid Sports entdecken <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <section id="kunden" class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Kundenstimmen</p>
+      <div class="row">
+        <h2 class="display">Das sagen<br>unsere Kunden</h2>
+        <p class="body-text" style="max-width:42ch">Wir freuen uns über jedes positive Feedback und besonders darüber, dass viele unserer Kunden uns schon seit Jahren treu bleiben. Ob Firmen, Vereine oder Privatkunden – sie schätzen unsere Qualität, den direkten Kontakt und die zuverlässige Zusammenarbeit.</p>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review">
+        <p class="stars" aria-label="Fünf von fünf Sternen">★★★★★</p>
+        <p>Qualität, Kompetenz und ein Team, das mitdenkt – von der Beratung bis zur fertigen Ware.</p>
+        <cite>Bewertungen von Google &amp; unseren Kunden</cite>
+      </div>
+      <div class="review">
+        <p class="stars" aria-label="Fünf von fünf Sternen">★★★★★</p>
+        <p>Freundlichkeit und Zuverlässigkeit: Termine stehen, Absprachen gelten, das Ergebnis stimmt.</p>
+        <cite>Firmen · Vereine · Privatkunden</cite>
+      </div>
+      <div class="review">
+        <p class="stars" aria-label="Fünf von fünf Sternen">★★★★★</p>
+        <p>Viele Kunden bleiben uns seit Jahren treu – der direkte Kontakt nach Kiel macht den Unterschied.</p>
+        <cite>Seit Januar 2002 in Kiel</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="contact">
+    <div class="wrap contact-in">
+      <div class="contact-card">
+        <p class="eyebrow">Kontakt</p>
+        <h2 class="display">Sie möchten Ihr nächstes Textilprojekt umsetzen?</h2>
+        <p>Ob Vereinsbekleidung, Arbeitskleidung oder Promotionartikel – wir beraten Sie gern persönlich und finden gemeinsam die passende Veredelungslösung.</p>
+        <dl class="contact-list">
+          <div><dt>Telefon</dt><dd><a href="tel:+494317055702">+49 431 70 55 702</a></dd></div>
+          <div><dt>E-Mail</dt><dd><a href="mailto:moin@laroid.de">moin@laroid.de</a></dd></div>
+          <div><dt>Werkstatt</dt><dd>Flughafen Kiel · Boelckestraße 100<br>24159 Kiel</dd></div>
+        </dl>
+      </div>
+
+      <div class="form-panel">
+        <h3 class="form-title">Anfrage stellen</h3>
+        <p class="form-intro">Erzählen Sie uns kurz von Ihrem Projekt – wir melden uns mit einer Einschätzung zu Technik, Textil und Stückzahl.</p>
+        <form id="anfrage-form" class="form" novalidate>
+          <div class="field">
+            <label for="f-name">Name *</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-org">Firma / Verein</label>
+            <input id="f-org" name="org" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-mail">E-Mail *</label>
+            <input id="f-mail" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Telefon</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="f-technik">Veredelung</label>
+            <select id="f-technik" name="technik">
+              <option value="Noch offen – bitte beraten">Noch offen / Beratung</option>
+              <option value="Digital-Direktdruck">Digital-Direktdruck</option>
+              <option value="Direktsiebdruck">Direktsiebdruck</option>
+              <option value="Gedruckte Transfers">Gedruckte Transfers</option>
+              <option value="Plott-Transfers">Plott-Transfers</option>
+              <option value="Bestickung">Bestickung</option>
+              <option value="Sublimationsdruck">Sublimationsdruck</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-menge">Stückzahl</label>
+            <select id="f-menge" name="menge">
+              <option value="1–24">1 – 24 Stück</option>
+              <option value="25–99">25 – 99 Stück</option>
+              <option value="100–499">100 – 499 Stück</option>
+              <option value="ab 500">ab 500 Stück</option>
+              <option value="unklar">noch unklar</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="f-text">Ihr Projekt *</label>
+            <textarea id="f-text" name="message" rows="4" required placeholder="Textil, Motiv, Veredelungsposition, Wunschtermin …"></textarea>
+          </div>
+          <label class="check field--full" for="f-datenschutz">
+            <input id="f-datenschutz" name="datenschutz" type="checkbox" required>
+            <span>Ich habe die <a href="https://www.laroid.de/j/privacy">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. *</span>
+          </label>
+          <div class="form-foot field--full">
+            <button class="btn btn--solid" type="submit" id="f-submit">Anfrage senden <span class="arrow">→</span></button>
+            <p class="form-note" id="f-note" role="status">Pflichtfelder sind mit * markiert.</p>
+          </div>
+        </form>
+        <div class="form-done" id="f-done" hidden>
+          <p class="done-mark" aria-hidden="true">✓</p>
+          <h3>Vielen Dank – Ihre Anfrage ist bei uns.</h3>
+          <p>Wir melden uns werktags innerhalb von 24 Stunden. Dringend? Rufen Sie uns an: <a href="tel:+494317055702">+49 431 70 55 702</a>.</p>
+          <button class="btn btn--ghost" type="button" id="f-again">Weitere Anfrage stellen</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="flogo" src="assets/logo.png" alt="LAROID – Textile Kommunikation">
+        <address>
+          LAROID-Textilveredelung GmbH<br>
+          Flughafen Kiel · Boelckestraße 100<br>
+          24159 Kiel<br>
+          <a href="tel:+494317055702">Telefon: +49 431 70 55 702</a><br>
+          <a href="mailto:moin@laroid.de">E-Mail: moin@laroid.de</a>
+        </address>
+      </div>
+      <div>
+        <p class="foot-h">Textildruck</p>
+        <ul class="foot-list">
+          <li><a href="#technik">Digital-Direktdruck</a></li>
+          <li><a href="#technik">Direktsiebdruck</a></li>
+          <li><a href="#technik">Gedruckte Transfers</a></li>
+          <li><a href="#technik">Plott-Transfers</a></li>
+          <li><a href="#technik">Bestickung</a></li>
+          <li><a href="#technik">Sublimationsdruck</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h">Sortiment</p>
+        <ul class="foot-list">
+          <li><a href="#sortiment">Sportswear</a></li>
+          <li><a href="#sortiment">Gastro Wear</a></li>
+          <li><a href="#sortiment">Businesswear</a></li>
+          <li><a href="#sortiment">Workwear</a></li>
+          <li><a href="#sortiment">LaNature</a></li>
+          <li><a href="#sortiment">Merchandise</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h">Unternehmen</p>
+        <ul class="foot-list">
+          <li><a href="https://www.laroid.de/team/">Team</a></li>
+          <li><a href="https://www.laroid.de/gots/">GOTS-Zertifizierung</a></li>
+          <li><a href="https://www.laroid.de/info/datenanlieferung/">Datenanlieferung</a></li>
+          <li><a href="https://www.laroid.de/info/stellenangebote/">Stellenangebote</a></li>
+          <li><a href="https://www.laroid.de/kontakt/">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h">Shop &amp; Marken</p>
+        <ul class="foot-list">
+          <li><a href="https://shop-laroid.de/">LAROID Shop</a></li>
+          <li><a href="https://stanleystella.com/de-eu">Stanley/Stella</a></li>
+          <li><a href="https://shop-laroid.de/">HAKRO · Greiff</a></li>
+          <li><a href="https://shop-laroid.de/">Neutral · Earthpositive</a></li>
+        </ul>
+        <div class="dealer">
+          <img src="assets/dealer.png" alt="Stanley/Stella Official Dealer">
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      <nav aria-label="Rechtliches">
+        <a href="https://www.laroid.de/about/">Impressum</a>
+        <a href="https://www.laroid.de/j/shop/terms">AGB</a>
+        <a href="https://www.laroid.de/j/shop/terms">Liefer- und Zahlungsbedingungen</a>
+        <a href="https://www.laroid.de/j/privacy">Datenschutz</a>
+        <a href="https://www.laroid.de/j/privacy">Cookie-Richtlinie</a>
+        <a href="https://www.laroid.de/j/shop/terms">Gesetzliche Gewährleistung</a>
+        <a href="https://www.laroid.de/j/shop/terms">Vertrag widerrufen</a>
+      </nav>
+      <span>Alle Preise inkl. MwSt. · Textilveredelung aus Kiel seit 2002</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('anfrage-form');
+  var note = document.getElementById('f-note');
+  var done = document.getElementById('f-done');
+  var submit = document.getElementById('f-submit');
+  var again = document.getElementById('f-again');
+  var check = document.getElementById('f-datenschutz');
+  var DEFAULT_NOTE = 'Pflichtfelder sind mit * markiert.';
+  var MAIL_HINT = 'Das Formular ist gerade nicht erreichbar. Schreiben Sie uns bitte an moin@laroid.de oder rufen Sie an: +49 431 70 55 702.';
+  var dbPromise = null;
+
+  function store() {
+    if (!dbPromise) {
+      dbPromise = (window.claude && window.claude.use)
+        ? window.claude.use('db').catch(function () { return null; })
+        : Promise.resolve(null);
+    }
+    return dbPromise;
+  }
+
+
+  function mailtoFallback(p) {
+    var lines = [
+      'Name: ' + p.name,
+      'Firma / Verein: ' + (p.org || '-'),
+      'E-Mail: ' + p.email,
+      'Telefon: ' + (p.phone || '-'),
+      'Veredelung: ' + p.technik,
+      'Stueckzahl: ' + p.menge,
+      '',
+      'Projekt:',
+      p.message
+    ].join('\n');
+    var href = 'mailto:moin@laroid.de'
+      + '?subject=' + encodeURIComponent('Anfrage Textilveredelung – ' + p.name)
+      + '&body=' + encodeURIComponent(lines);
+    window.location.href = href;
+  }
+
+  function setNote(text, state) {
+    note.textContent = text;
+    if (state) { note.setAttribute('data-state', state); } else { note.removeAttribute('data-state'); }
+  }
+
+  function markInvalid(el, bad) {
+    if (bad) { el.setAttribute('aria-invalid', 'true'); } else { el.removeAttribute('aria-invalid'); }
+  }
+
+  form.addEventListener('input', function (e) {
+    if (e.target.hasAttribute('aria-invalid')) { markInvalid(e.target, false); }
+    if (e.target === check) { check.closest('.check').removeAttribute('data-invalid'); }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById('f-name');
+    var mail = document.getElementById('f-mail');
+    var text = document.getElementById('f-text');
+    var firstBad = null;
+
+    [[name, !name.value.trim()], [mail, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.value.trim())], [text, !text.value.trim()]]
+      .forEach(function (pair) {
+        markInvalid(pair[0], pair[1]);
+        if (pair[1] && !firstBad) { firstBad = pair[0]; }
+      });
+
+    var box = check.closest('.check');
+    if (!check.checked) {
+      box.setAttribute('data-invalid', 'true');
+      if (!firstBad) { firstBad = check; }
+    } else {
+      box.removeAttribute('data-invalid');
+    }
+
+    if (firstBad) {
+      setNote('Bitte Name, E-Mail, Projektbeschreibung und die Einwilligung ausfüllen.', 'error');
+      firstBad.focus();
+      return;
+    }
+
+    var payload = {
+      name: name.value.trim(),
+      org: document.getElementById('f-org').value.trim(),
+      email: mail.value.trim(),
+      phone: document.getElementById('f-phone').value.trim(),
+      technik: document.getElementById('f-technik').value,
+      menge: document.getElementById('f-menge').value,
+      message: text.value.trim(),
+      datenschutz: true,
+      eingegangen: new Date().toISOString(),
+      status: 'neu'
+    };
+
+    submit.disabled = true;
+    setNote('Wird gesendet …', 'busy');
+
+    store().then(function (db) {
+      if (!db) { throw new Error('unavailable'); }
+      return db.collection('anfragen').add(payload);
+    }).then(function () {
+      form.hidden = true;
+      done.hidden = false;
+      done.querySelector('h3').focus && done.querySelector('h3').focus();
+    }).catch(function () {
+      submit.disabled = false;
+      try {
+        mailtoFallback(payload);
+        setNote('Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage.', null);
+      } catch (err) {
+        setNote(MAIL_HINT, 'error');
+      }
+    });
+  });
+
+  again.addEventListener('click', function () {
+    form.reset();
+    submit.disabled = false;
+    setNote(DEFAULT_NOTE, null);
+    done.hidden = true;
+    form.hidden = false;
+    document.getElementById('f-name').focus();
+  });
+})();
+</script>
+
+</body>
+</html>

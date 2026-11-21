@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Imperial Beauty Salon — Кіль</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1209;
+  --gold:#b8935a;
+  --gold-light:#e8d5b0;
+  --cream:#faf7f2;
+  --warm:#f2ebe0;
+  --mid:#7a6550;
+  --muted:#b0a090;
+  --white:#ffffff;
+  --border:rgba(184,147,90,.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ─── UTILITY ─── */
+.serif{font-family:'Playfair Display',serif}
+.tag{
+  display:inline-block;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold-light);padding:.28rem .9rem;border-radius:999px;
+}
+.divider{width:40px;height:1px;background:var(--gold);display:block}
+.btn{
+  display:inline-block;padding:.85rem 2.2rem;font-size:.75rem;letter-spacing:.15em;
+  text-transform:uppercase;border:1px solid var(--ink);color:var(--ink);
+  transition:background .25s,color .25s;cursor:pointer;
+}
+.btn:hover{background:var(--ink);color:var(--cream)}
+.btn-gold{background:var(--gold);color:var(--white);border-color:var(--gold)}
+.btn-gold:hover{background:#9a7840;border-color:#9a7840;color:var(--white)}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 3.5rem;background:rgba(250,247,242,.92);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+  transition:padding .3s;
+}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.25rem;letter-spacing:.06em;font-weight:400}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.6rem 1.5rem;border:1px solid var(--gold);color:var(--gold);transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--gold);color:var(--white)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s}
+.mobile-menu{display:none}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;padding-top:80px;
+  display:grid;grid-template-columns:1fr 1fr;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:5rem 4rem 5rem 3.5rem;
+}
+.hero-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.8rem}
+.hero-eyebrow .divider{width:28px}
+.hero-eyebrow p{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,4.5vw,4.8rem);font-weight:400;
+  line-height:1.1;margin-bottom:1.6rem}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:.93rem;line-height:1.8;color:var(--mid);max-width:400px;margin-bottom:2.6rem}
+.hero-actions{display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:3.5rem;
+  border-top:1px solid var(--border);padding-top:2rem;
+}
+.stat-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:var(--ink)}
+.stat-l{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+
+.hero-right{position:relative;background:var(--warm);overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;filter:brightness(.96)}
+.hero-badge{
+  position:absolute;bottom:2.5rem;left:-1rem;
+  background:var(--white);padding:1.1rem 1.4rem;
+  box-shadow:0 12px 40px rgba(26,18,9,.1);
+  max-width:180px;
+}
+.hero-badge .tag{margin-bottom:.5rem}
+.hero-badge-title{font-family:'Playfair Display',serif;font-size:1rem;margin:.3rem 0 .2rem}
+.hero-badge-sub{font-size:.7rem;color:var(--muted)}
+
+/* ─── SECTION BASE ─── */
+section{padding:6rem 3.5rem}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-header .tag{margin-bottom:1rem}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:400;margin-bottom:1rem}
+.section-header p{font-size:.9rem;color:var(--mid);max-width:480px;margin:0 auto;line-height:1.8}
+
+/* ─── SERVICES GRID ─── */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5px;background:var(--border)}
+.service-card{
+  background:var(--cream);padding:2.4rem 2rem;
+  transition:background .3s;cursor:default;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.service-card:hover{background:var(--white)}
+.service-icon{font-size:1.6rem;margin-bottom:.2rem}
+.service-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400}
+.service-card p{font-size:.84rem;color:var(--mid);line-height:1.7;flex:1}
+.service-link{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);display:inline-flex;align-items:center;gap:.4rem;margin-top:.5rem}
+.service-link::after{content:'→';transition:transform .2s}
+.service-card:hover .service-link::after{transform:translateX(4px)}
+
+/* ─── PRICE TABLES ─── */
+.price-section{background:var(--white)}
+.price-tabs{display:flex;gap:0;border:1px solid var(--border);width:fit-content;margin:0 auto 3rem;flex-wrap:wrap}
+.price-tab{
+  padding:.65rem 1.6rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  cursor:pointer;border:none;background:none;color:var(--mid);transition:background .2s,color .2s;
+}
+.price-tab.active{background:var(--ink);color:var(--cream)}
+.price-panel{display:none}
+.price-panel.active{display:block}
+.price-table{width:100%;max-width:720px;margin:0 auto;border-collapse:collapse}
+.price-table tr{border-bottom:1px solid var(--border)}
+.price-table tr:last-child{border-bottom:none}
+.price-table td{padding:1.1rem .5rem;font-size:.88rem;line-height:1.5}
+.price-table td:first-child{color:var(--ink)}
+.price-table td:last-child{text-align:right;font-family:'Playfair Display',serif;
+  font-size:1.05rem;white-space:nowrap;color:var(--gold)}
+.price-table .sub{font-size:.75rem;color:var(--muted);display:block;margin-top:.15rem}
+.price-note{text-align:center;margin-top:2rem;font-size:.78rem;color:var(--muted)}
+
+/* ─── ABOUT ─── */
+.about{background:var(--warm)}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto}
+.about-text .tag{margin-bottom:1.2rem}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:400;margin-bottom:1.4rem}
+.about-text p{font-size:.9rem;color:var(--mid);line-height:1.85;margin-bottom:1.2rem}
+.about-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.about-img-grid img{height:220px;width:100%;object-fit:cover}
+.about-img-grid img:first-child{grid-column:span 2;height:280px}
+
+/* ─── CONTACT ─── */
+.contact-section{background:var(--ink);color:var(--cream)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;max-width:1100px;margin:0 auto}
+.contact-info .tag{border-color:rgba(184,147,90,.4);color:var(--gold);margin-bottom:1.2rem}
+.contact-info h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;margin-bottom:1.5rem;line-height:1.2}
+.contact-detail{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:1.2rem}
+.contact-icon{font-size:1.1rem;margin-top:.05rem;opacity:.7}
+.contact-detail-text p:first-child{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.contact-detail-text p:last-child{font-size:.92rem;color:var(--cream)}
+.contact-detail-text a{color:var(--gold)}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.contact-form input,.contact-form textarea{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:var(--cream);padding:.9rem 1.1rem;font-size:.85rem;font-family:'DM Sans',sans-serif;
+  transition:border-color .2s;
+}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(250,247,242,.35)}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--gold)}
+.contact-form textarea{resize:vertical;min-height:110px}
+.contact-form .btn{background:var(--gold);border-color:var(--gold);color:var(--white);width:100%;text-align:center}
+.contact-form .btn:hover{background:#9a7840;border-color:#9a7840}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--ink);border-top:1px solid rgba(255,255,255,.08);
+  padding:2rem 3.5rem;display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(250,247,242,.6);letter-spacing:.06em}
+.footer-logo span{color:var(--gold)}
+.footer-copy{font-size:.7rem;color:rgba(250,247,242,.3);letter-spacing:.06em}
+.footer-links{display:flex;gap:1.8rem}
+.footer-links a{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,247,242,.35);transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+/* ─── SCROLL ANIMATION ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .nav-burger{display:flex}
+  .mobile-menu{
+    display:block;position:fixed;top:61px;left:0;right:0;z-index:99;
+    background:var(--cream);border-bottom:1px solid var(--border);
+    padding:1.5rem;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s;
+  }
+  .mobile-menu.open{max-height:400px;padding:1.5rem}
+  .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.2rem}
+  .mobile-menu a{font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{height:55vw;min-height:260px}
+  .hero-left{padding:3rem 1.5rem}
+  section{padding:4rem 1.5rem}
+  .about-inner,.contact-inner{grid-template-columns:1fr;gap:2.5rem}
+  .about-img-grid img{height:160px}
+  .about-img-grid img:first-child{height:220px}
+  footer{padding:1.5rem;flex-direction:column;align-items:flex-start;gap:.8rem}
+}
+@media(max-width:560px){
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .services-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn,.nav-cta,.service-card,.service-link::after{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Imperial <span>Beauty</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Послуги</a></li>
+    <li><a href="#prices">Ціни</a></li>
+    <li><a href="#about">Про нас</a></li>
+    <li><a href="#contact">Контакт</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Записатись</a>
+  <button class="nav-burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#services" onclick="closeMobile()">Послуги</a></li>
+    <li><a href="#prices" onclick="closeMobile()">Ціни</a></li>
+    <li><a href="#about" onclick="closeMobile()">Про нас</a></li>
+    <li><a href="#contact" onclick="closeMobile()">Контакт</a></li>
+  </ul>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="divider"></span>
+      <p>Салон краси · Кіль, Німеччина</p>
+    </div>
+    <h1>Ваша краса —<br/>наше <em>мистецтво</em></h1>
+    <p class="hero-desc">
+      Професійний догляд за нігтями, шкірою обличчя, віями та бровами.
+      Сучасні техніки, преміальні матеріали та індивідуальний підхід до кожного клієнта.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-gold">Записатись онлайн</a>
+      <a href="#prices" class="btn">Переглянути ціни</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-n">2,8k</div>
+        <div class="stat-l">Задоволених клієнтів</div>
+      </div>
+      <div>
+        <div class="stat-n">1,4k</div>
+        <div class="stat-l">Дизайнів нігтів</div>
+      </div>
+      <div>
+        <div class="stat-n">3,4k</div>
+        <div class="stat-l">Годин процедур</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img"
+      src="https://www.beauty-imperial.de/wp-content/uploads/go-x/u/887e81b1-66c4-4be6-8f73-c13d5bd05a84/l0,t0,w962,h1706/image.jpg"
+      alt="Imperial Beauty Salon" loading="eager"/>
+    <div class="hero-badge">
+      <span class="tag">Топ-послуга</span>
+      <div class="hero-badge-title">Дизайн нігтів</div>
+      <div class="hero-badge-sub">Результат, який говорить сам за себе</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section id="services">
+  <div class="section-header reveal">
+    <span class="tag">Наші послуги</span>
+    <h2>Повний спектр краси</h2>
+    <p>Кожна процедура — це турбота про вас. Від нігтів до обличчя, від вій до брів.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">💅</div>
+      <h3>Дизайн нігтів</h3>
+      <p>Творчий дизайн нігтів за вашими побажаннями — для ідеального завершення образу. Гель, акрил, шеллак.</p>
+      <a href="#prices" class="service-link">Дивитись ціни</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">✋</div>
+      <h3>Манікюр</h3>
+      <p>Класичний та апаратний манікюр. Догляд за кутикулою, зволоження, захист нігтів.</p>
+      <a href="#prices" class="service-link">Дивитись ціни</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🦶</div>
+      <h3>Педикюр</h3>
+      <p>Розслабтесь із нашим доглядом для ніг. Класичний та апаратний педикюр, SPA-процедури.</p>
+      <a href="#prices" class="service-link">Дивитись ціни</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">✨</div>
+      <h3>Догляд за обличчям</h3>
+      <p>Професійний догляд за шкірою для сяючого вигляду та молодості. Очищення, живлення, ліфтинг.</p>
+      <a href="#prices" class="service-link">Дивитись ціни</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">👁️</div>
+      <h3>Вії</h3>
+      <p>Нарощування та ламінування вій — кожного дня ідеальний погляд без зусиль.</p>
+      <a href="#prices" class="service-link">Дивитись ціни</a>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🎨</div>
+      <h3>Брови</h3>
+      <p>Корекція та оформлення брів. Краса, яка визначає погляд і підкреслює риси обличчя.</p>
+      <a href="#prices" class="service-link">Дивитись ціни</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICES ─── -->
+<section id="prices" class="price-section">
+  <div class="section-header reveal">
+    <span class="tag">Прайс-лист</span>
+    <h2>Ціни та послуги</h2>
+    <p>Справжня якість та професіоналізм мають свою цінність.</p>
+  </div>
+
+  <div class="price-tabs" role="tablist">
+    <button class="price-tab active" onclick="showTab('nails')" role="tab">Нігті</button>
+    <button class="price-tab" onclick="showTab('face')" role="tab">Обличчя</button>
+    <button class="price-tab" onclick="showTab('eyes')" role="tab">Вії та брови</button>
+    <button class="price-tab" onclick="showTab('pedi')" role="tab">Педикюр</button>
+  </div>
+
+  <!-- NAILS -->
+  <div class="price-panel active" id="tab-nails">
+    <table class="price-table">
+      <tbody>
+        <tr>
+          <td>
+            Манікюр класичний
+            <span class="sub">Обробка, форма, покриття</span>
+          </td>
+          <td>від 25 €</td>
+        </tr>
+        <tr>
+          <td>
+            Гелеве покриття (шеллак)
+            <span class="sub">Зняття + нанесення</span>
+          </td>
+          <td>від 35 €</td>
+        </tr>
+        <tr>
+          <td>
+            Нарощування нігтів (гель)
+            <span class="sub">Повний комплект</span>
+          </td>
+          <td>від 55 €</td>
+        </tr>
+        <tr>
+          <td>
+            Дизайн нігтів
+            <span class="sub">Малюнок, стемпінг, втирка — за ніготь</span>
+          </td>
+          <td>від 3 €</td>
+        </tr>
+        <tr>
+          <td>
+            Корекція нігтів
+            <span class="sub">Рефіл, корекція довжини</span>
+          </td>
+          <td>від 40 €</td>
+        </tr>
+        <tr>
+          <td>
+            Зняття гелю / акрилу
+            <span class="sub">Безпечне зняття без пошкоджень</span>
+          </td>
+          <td>від 15 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FACE -->
+  <div class="price-panel" id="tab-face">
+    <table class="price-table">
+      <tbody>
+        <tr>
+          <td>
+            Класичне чищення обличчя
+            <span class="sub">Пара, пілінг, видалення комедонів</span>
+          </td>
+          <td>від 45 €</td>
+        </tr>
+        <tr>
+          <td>
+            Зволожуючий догляд
+            <span class="sub">Маска, сироватка, крем</span>
+          </td>
+          <td>від 50 €</td>
+        </tr>
+        <tr>
+          <td>
+            Антивіковий ліфтинг-догляд
+            <span class="sub">Масаж + маска</span>
+          </td>
+          <td>від 65 €</td>
+        </tr>
+        <tr>
+          <td>
+            Хімічний пілінг
+            <span class="sub">Фруктові кислоти</span>
+          </td>
+          <td>від 55 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EYES -->
+  <div class="price-panel" id="tab-eyes">
+    <table class="price-table">
+      <tbody>
+        <tr>
+          <td>
+            Нарощування вій (класика)
+            <span class="sub">Натуральний ефект</span>
+          </td>
+          <td>від 50 €</td>
+        </tr>
+        <tr>
+          <td>
+            Нарощування вій (об'єм)
+            <span class="sub">2D–5D пучки</span>
+          </td>
+          <td>від 65 €</td>
+        </tr>
+        <tr>
+          <td>
+            Ламінування вій
+            <span class="sub">+ кератин, підбарвлення</span>
+          </td>
+          <td>від 55 €</td>
+        </tr>
+        <tr>
+          <td>
+            Зняття вій
+          </td>
+          <td>від 15 €</td>
+        </tr>
+        <tr>
+          <td>
+            Корекція брів (воск/нитка)
+          </td>
+          <td>від 12 €</td>
+        </tr>
+        <tr>
+          <td>
+            Ламінування брів + оформлення
+            <span class="sub">З фарбуванням</span>
+          </td>
+          <td>від 45 €</td>
+        </tr>
+        <tr>
+          <td>
+            Перманентний макіяж брів (powder/ombre)
+            <span class="sub">Консультація включена</span>
+          </td>
+          <td>від 200 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PEDI -->
+  <div class="price-panel" id="tab-pedi">
+    <table class="price-table">
+      <tbody>
+        <tr>
+          <td>
+            Класичний педикюр
+            <span class="sub">Ванночка, обробка, покриття</span>
+          </td>
+          <td>від 40 €</td>
+        </tr>
+        <tr>
+          <td>
+            Апаратний педикюр
+            <span class="sub">Видалення мозолів, тріщин</span>
+          </td>
+          <td>від 45 €</td>
+        </tr>
+        <tr>
+          <td>
+            SPA-педикюр
+            <span class="sub">Скраб + маска + масаж</span>
+          </td>
+          <td>від 60 €</td>
+        </tr>
+        <tr>
+          <td>
+            Гелеве покриття на нігті ніг
+          </td>
+          <td>від 25 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="price-note reveal">* Точні ціни залежать від складності роботи та матеріалів. Консультація безкоштовна.</p>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about" class="about">
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <span class="tag">Про нас</span>
+      <h2>Imperial Beauty Salon у Кілі</h2>
+      <p>
+        Ми — команда пристрасних фахівців з краси, які вірять, що кожна людина заслуговує
+        на найкращий догляд. Наш салон у Кілі пропонує широкий спектр послуг від нейл-арту
+        до комплексного догляду за обличчям.
+      </p>
+      <p>
+        Ми використовуємо виключно перевірені матеріали провідних брендів та постійно
+        навчаємось новітнім технікам, щоб дарувати вам результат, який перевершує очікування.
+      </p>
+      <a href="#contact" class="btn" style="margin-top:.5rem">Зв'язатись з нами</a>
+    </div>
+    <div class="about-img-grid reveal">
+      <img src="https://www.beauty-imperial.de/wp-content/uploads/go-x/u/fda14ee3-b1c5-46a7-b526-c74d42c363ee/l270,t0,w1080,h1080/image-768x768.jpg" alt="Салон краси Imperial" loading="lazy"/>
+      <img src="https://www.beauty-imperial.de/wp-content/uploads/go-x/u/9c59dbf4-ae56-46b6-86a9-51aead2163a1/l269,t0,w1080,h1080/image-768x768.jpg" alt="Процедура манікюру" loading="lazy"/>
+      <img src="https://www.beauty-imperial.de/wp-content/uploads/go-x/u/ffc21ec9-e767-4212-b1fc-443168f05dd5/l470,t0,w1080,h1080/image-768x768.jpg" alt="Нейл-арт" loading="lazy"/>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <span class="tag">Контакт</span>
+      <h2>Запишіться<br/>на прийом</h2>
+      <div class="contact-detail">
+        <span class="contact-icon">📍</span>
+        <div class="contact-detail-text">
+          <p>Адреса</p>
+          <p>Zum Brook 3, 24143 Kiel<br/>Schleswig-Holstein, Німеччина</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon">📞</span>
+        <div class="contact-detail-text">
+          <p>Телефон</p>
+          <p><a href="tel:+4915142055837">+49 151 420 55 837</a></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon">✉️</span>
+        <div class="contact-detail-text">
+          <p>E-Mail</p>
+          <p><a href="mailto:post@imperial.gmbh">post@imperial.gmbh</a></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon">🕐</span>
+        <div class="contact-detail-text">
+          <p>Години роботи</p>
+          <p>Пн–Пт: 10:00–19:00<br/>Сб: 10:00–17:00</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" onsubmit="handleForm(event)">
+        <input type="text" placeholder="Ваше ім'я *" required/>
+        <input type="tel" placeholder="Телефон або E-Mail *" required/>
+        <input type="text" placeholder="Послуга (необов'язково)"/>
+        <textarea placeholder="Повідомлення або бажана дата та час..."></textarea>
+        <button type="submit" class="btn">Надіслати запит</button>
+      </form>
+      <p id="form-msg" style="margin-top:.8rem;font-size:.8rem;color:var(--gold);display:none">
+        ✓ Дякуємо! Ми зв'яжемось з вами найближчим часом.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <span class="footer-logo">Imperial <span>Beauty</span></span>
+  <span class="footer-copy">© 2025 Imperial Beauty Salon, Kiel</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/imperial_beauty_kiel" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@imperial.beauty29" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.beauty-imperial.de/kontakt/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+    <a href="https://www.beauty-imperial.de/kontakt/impressum/" target="_blank" rel="noopener">Impressum</a>
+  </div>
+</footer>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.price-tab').forEach((t,i)=>{
+    const ids=['nails','face','eyes','pedi'];
+    t.classList.toggle('active',ids[i]===id);
+  });
+  document.querySelectorAll('.price-panel').forEach(p=>{
+    p.classList.toggle('active',p.id==='tab-'+id);
+  });
+}
+
+const burger=document.getElementById('burger');
+const mobileMenu=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+function closeMobile(){mobileMenu.classList.remove('open')}
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+function handleForm(e){
+  e.preventDefault();
+  const msg=document.getElementById('form-msg');
+  msg.style.display='block';
+  e.target.reset();
+}
+</script>
+</body>
+</html>

@@ -928,27 +928,27 @@ footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(
     </div>
     <div class="reels rv" id="reels">
       <button class="reel" type="button" data-src="videos/video-1.mp4" aria-label="Переглянути відео зі звуком">
-        <video src="videos/video-1.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+        <video src="videos/video-1.mp4" poster="videos/poster-1.jpg" muted loop playsinline webkit-playsinline preload="none"></video>
         <span class="reel__meta"><span>0:15</span><span class="reel__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Зі звуком</span></span>
       </button>
       <button class="reel" type="button" data-src="videos/video-2.mp4" aria-label="Переглянути відео зі звуком">
-        <video src="videos/video-2.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+        <video src="videos/video-2.mp4" poster="videos/poster-2.jpg" muted loop playsinline webkit-playsinline preload="none"></video>
         <span class="reel__meta"><span>0:12</span><span class="reel__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Зі звуком</span></span>
       </button>
       <button class="reel" type="button" data-src="videos/video-3.mp4" aria-label="Переглянути відео зі звуком">
-        <video src="videos/video-3.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+        <video src="videos/video-3.mp4" poster="videos/poster-3.jpg" muted loop playsinline webkit-playsinline preload="none"></video>
         <span class="reel__meta"><span>0:08</span><span class="reel__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Зі звуком</span></span>
       </button>
       <button class="reel reel--wide" type="button" data-src="videos/video-4.mp4" aria-label="Переглянути відео зі звуком">
-        <video src="videos/video-4.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+        <video src="videos/video-4.mp4" poster="videos/poster-4.jpg" muted loop playsinline webkit-playsinline preload="none"></video>
         <span class="reel__meta"><span>0:15</span><span class="reel__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Зі звуком</span></span>
       </button>
       <button class="reel" type="button" data-src="videos/video-5.mp4" aria-label="Переглянути відео зі звуком">
-        <video src="videos/video-5.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+        <video src="videos/video-5.mp4" poster="videos/poster-5.jpg" muted loop playsinline webkit-playsinline preload="none"></video>
         <span class="reel__meta"><span>0:33</span><span class="reel__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Зі звуком</span></span>
       </button>
       <button class="reel" type="button" data-src="videos/video-6.mp4" aria-label="Переглянути відео зі звуком">
-        <video src="videos/video-6.mp4#t=0.1" muted loop playsinline preload="metadata"></video>
+        <video src="videos/video-6.mp4" poster="videos/poster-6.jpg" muted loop playsinline webkit-playsinline preload="none"></video>
         <span class="reel__meta"><span>0:15</span><span class="reel__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Зі звуком</span></span>
       </button>
     </div>
@@ -1093,7 +1093,8 @@ footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(
   const reels = $('#reels'), lb = $('#lightbox'), lbVideo = $('#lbVideo');
   const previews = $$('#reels video');
   const vio = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting && !reduce) { e.target.play().catch(() => {}); } else { e.target.pause(); }
+    const v = e.target;
+    if (e.isIntersecting && !reduce) { v.muted = true; const pr = v.play(); if (pr) pr.catch(() => {}); } else { v.pause(); }
   }), { threshold: 0.35 });
   previews.forEach(v => vio.observe(v));
   const step = () => (reels.querySelector('.reel') ? reels.querySelector('.reel').offsetWidth : 300) + 18;
@@ -1132,6 +1133,29 @@ footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(
       img.style.transform = 'translateY(0)';
     });
   });
+
+  /* ---------- touch screens: auto-scroll site screenshots while visible ---------- */
+  if (matchMedia('(hover: none)').matches) {
+    const sio = new IntersectionObserver(es => es.forEach(e => {
+      const view = e.target.querySelector('.browser__view'), img = view && view.querySelector('img');
+      if (!img) return;
+      if (e.isIntersecting) {
+        const run = down => {
+          const dist = img.offsetHeight - view.offsetHeight;
+          if (dist <= 0 || !img._on) return;
+          img.style.transition = `transform ${down ? Math.max(6, dist / 90) : 1.6}s ${down ? 'linear' : 'ease'}`;
+          img.style.transform = `translateY(${down ? -dist : 0}px)`;
+          img._t = setTimeout(() => run(!down), (down ? Math.max(6, dist / 90) : 1.6) * 1000 + 1200);
+        };
+        img._on = true;
+        if (img.complete && img.naturalWidth) run(true); else img.addEventListener('load', () => run(true), { once: true });
+      } else {
+        img._on = false; clearTimeout(img._t);
+        img.style.transition = 'none'; img.style.transform = 'translateY(0)';
+      }
+    }), { threshold: 0.5 });
+    $$('.site-case').forEach(c => { const im = c.querySelector('.browser__view img'); if (im) im.loading = 'eager'; sio.observe(c); });
+  }
 
   /* ---------- nav + menu ---------- */
   const nav = $('#nav'), prog = $('#progress');
