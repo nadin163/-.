@@ -435,7 +435,6 @@ footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(
   html{scroll-behavior:auto}
   .rv,.line>span{opacity:1;transform:none}
   .mask::before{display:none}
-  .marquee__track{animation-duration:60s!important;animation-iteration-count:infinite!important}
 }
 </style>
 </head>
@@ -1158,6 +1157,23 @@ footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(
     }), { threshold: 0.5 });
     $$('.site-case').forEach(c => { const im = c.querySelector('.browser__view img'); if (im) im.loading = 'eager'; sio.observe(c); });
   }
+
+  /* ---------- marquee: JS-driven so it moves on every phone/browser ---------- */
+  (() => {
+    const tracks = $$('.marquee__track');
+    if (!tracks.length) return;
+    tracks.forEach(t => { t.style.animation = 'none'; t.style.willChange = 'transform'; });
+    let x = 0, last = performance.now();
+    const speed = () => (innerWidth <= 640 ? 70 : 55) * (reduce ? 0.4 : 1); // px per second
+    const tick = now => {
+      const dt = Math.min(0.05, (now - last) / 1000); last = now;
+      const w = tracks[0].offsetWidth;
+      if (w) { x -= speed() * dt; if (-x >= w) x += w; }
+      tracks.forEach(t => { t.style.transform = 'translate3d(' + x + 'px,0,0)'; });
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  })();
 
   /* ---------- nav + menu ---------- */
   const nav = $('#nav'), prog = $('#progress');
