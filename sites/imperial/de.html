@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Imperial Beauty Salon — Kosmetikstudio in Kiel</title>
+<meta name="description" content="Imperial Beauty Salon in Kiel: Maniküre, Nageldesign, Pediküre, Gesichtspflege, Wimpern und Augenbrauen. Zum Brook 3, 24143 Kiel. Online-Terminanfrage per WhatsApp oder E-Mail."/>
+<meta name="theme-color" content="#faf7f2"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Imperial Beauty Salon — Kiel"/>
+<meta property="og:description" content="Nägel, Gesicht, Wimpern und Augenbrauen. Premium-Pflege im Herzen von Kiel."/>
+<meta property="og:image" content="images/reception.jpg"/>
+<link rel="alternate" hreflang="uk" href="index.html"/>
+<link rel="alternate" hreflang="de" href="de.html"/>
+<link rel="icon" type="image/png" href="images/favicon.png"/>
+<link rel="apple-touch-icon" href="images/logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BeautySalon",
+  "name":"Imperial Beauty Salon",
+  "image":"images/reception.jpg",
+  "telephone":"+4915142055837",
+  "email":"post@imperial.gmbh",
+  "address":{"@type":"PostalAddress","streetAddress":"Zum Brook 3","postalCode":"24143","addressLocality":"Kiel","addressRegion":"Schleswig-Holstein","addressCountry":"DE"},
+  "url":"https://www.beauty-imperial.de/",
+  "sameAs":["https://www.instagram.com/imperial_beauty_kiel","https://www.tiktok.com/@imperial.beauty29"],
+  "priceRange":"€€"
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1209;
+  --gold:#b8935a;
+  --gold-dark:#9a7840;
+  --gold-light:#e8d5b0;
+  --cream:#faf7f2;
+  --warm:#f2ebe0;
+  --mid:#7a6550;
+  --muted:#a39282;
+  --white:#ffffff;
+  --border:rgba(184,147,90,.18);
+  --nav-h:72px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ─── UTILITY ─── */
+.tag{
+  display:inline-block;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold-light);padding:.28rem .9rem;border-radius:999px;
+}
+.divider{width:40px;height:1px;background:var(--gold);display:block}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:.85rem 2.2rem;font-size:.75rem;letter-spacing:.15em;
+  text-transform:uppercase;border:1px solid var(--ink);color:var(--ink);background:none;
+  transition:background .25s,color .25s,border-color .25s;cursor:pointer;
+}
+.btn:hover{background:var(--ink);color:var(--cream)}
+.btn-gold{background:var(--gold);color:var(--white);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-dark);border-color:var(--gold-dark);color:var(--white)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3.5rem;background:rgba(250,247,242,.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:0 6px 30px rgba(26,18,9,.06)}
+.nav-logo{display:flex;align-items:center;gap:.7rem;font-family:'Playfair Display',serif;font-size:1.25rem;letter-spacing:.06em;font-weight:400}
+.nav-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--gold);transition:right .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a.active::after{right:0}
+.nav-right{display:flex;align-items:center;gap:1.4rem}
+.lang{display:flex;border:1px solid var(--border)}
+.lang a{font-size:.66rem;letter-spacing:.12em;padding:.45rem .65rem;color:var(--mid);transition:background .2s,color .2s}
+.lang a:hover{color:var(--ink)}
+.lang a[aria-current="page"]{background:var(--ink);color:var(--cream)}
+.nav-cta{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.6rem 1.5rem;border:1px solid var(--gold);color:var(--gold);transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--gold);color:var(--white)}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;background:none;border:none;width:40px;height:40px;align-items:center}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .2s}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{display:none}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;padding:var(--nav-h) 0 0;
+  display:grid;grid-template-columns:1.05fr .95fr;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:5rem 4rem 5rem 3.5rem;
+}
+.hero-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.8rem}
+.hero-eyebrow .divider{width:28px}
+.hero-eyebrow p{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.5vw,4.8rem);font-weight:400;
+  line-height:1.1;margin-bottom:1.6rem}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:.95rem;line-height:1.8;color:var(--mid);max-width:420px;margin-bottom:2.6rem}
+.hero-actions{display:flex;align-items:center;gap:1rem 1.4rem;flex-wrap:wrap}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1.5rem;margin-top:3.5rem;
+  border-top:1px solid var(--border);padding-top:2rem;
+}
+.stat-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:var(--ink)}
+.stat-l{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:2px;hyphens:auto;overflow-wrap:anywhere}
+
+.hero-right{position:relative;background:var(--warm);overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hero-badge{
+  position:absolute;bottom:2.5rem;left:2rem;
+  background:var(--white);padding:1.1rem 1.4rem;
+  box-shadow:0 12px 40px rgba(26,18,9,.12);
+  max-width:220px;
+}
+.hero-badge .tag{margin-bottom:.5rem}
+.hero-badge-title{font-family:'Playfair Display',serif;font-size:1.05rem;margin:.3rem 0 .2rem}
+.hero-badge-sub{font-size:.72rem;color:var(--muted);line-height:1.5}
+
+/* ─── SECTION BASE ─── */
+section{padding:6rem 3.5rem}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-header .tag{margin-bottom:1rem}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:400;margin-bottom:1rem}
+.section-header p{font-size:.9rem;color:var(--mid);max-width:480px;margin:0 auto;line-height:1.8}
+
+/* ─── SERVICES GRID ─── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);max-width:1200px;margin:0 auto}
+.service-card{
+  background:var(--cream);padding:2.4rem 2rem;
+  transition:background .3s;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.service-card:hover{background:var(--white)}
+.service-icon{width:44px;height:44px;border:1px solid var(--gold-light);border-radius:50%;display:grid;place-items:center;color:var(--gold)}
+.service-icon svg{width:22px;height:22px}
+.service-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400}
+.service-card p{font-size:.85rem;color:var(--mid);line-height:1.7;flex:1}
+.service-actions{display:flex;gap:1.4rem;flex-wrap:wrap}
+.service-link{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);display:inline-flex;align-items:center;gap:.4rem;background:none;border:none;cursor:pointer;padding:0}
+.service-link::after{content:'→';transition:transform .2s}
+.service-link:hover::after{transform:translateX(4px)}
+.service-link.alt{color:var(--mid)}
+
+/* ─── PRICE TABLES ─── */
+.price-section{background:var(--white)}
+.price-tabs{display:flex;border:1px solid var(--border);width:fit-content;max-width:100%;margin:0 auto 3rem;flex-wrap:wrap;justify-content:center}
+.price-tab{
+  padding:.75rem 1.6rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  cursor:pointer;border:none;background:none;color:var(--mid);transition:background .2s,color .2s;
+}
+.price-tab:hover{color:var(--ink)}
+.price-tab[aria-selected="true"]{background:var(--ink);color:var(--cream)}
+.price-panel[hidden]{display:none}
+.price-table{width:100%;max-width:720px;margin:0 auto;border-collapse:collapse}
+.price-table tr{border-bottom:1px solid var(--border)}
+.price-table tr:last-child{border-bottom:none}
+.price-table td{padding:1.1rem .5rem;font-size:.9rem;line-height:1.5;vertical-align:top}
+.price-table td:last-child{text-align:right;font-family:'Playfair Display',serif;
+  font-size:1.08rem;white-space:nowrap;color:var(--gold)}
+.price-table .sub{font-size:.76rem;color:var(--muted);display:block;margin-top:.15rem}
+.price-note{text-align:center;margin-top:2rem;font-size:.78rem;color:var(--muted)}
+.price-cta{text-align:center;margin-top:2rem}
+
+/* ─── GALLERY ─── */
+.gallery{background:var(--cream)}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:1rem;
+  max-width:1200px;margin:0 auto;
+}
+.g-item{position:relative;overflow:hidden;background:var(--warm);cursor:zoom-in;border:none;padding:0}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.g-item:hover img{transform:scale(1.04)}
+.g-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:1.6rem 1rem .8rem;text-align:left;
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--white);
+  background:linear-gradient(transparent,rgba(26,18,9,.55));
+}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+
+.lightbox{border:none;padding:0;background:transparent;max-width:min(92vw,1100px);max-height:92vh;margin:auto}
+.lightbox::backdrop{background:rgba(26,18,9,.88)}
+.lightbox img{max-width:min(92vw,1100px);max-height:84vh;object-fit:contain;margin:0 auto}
+.lightbox p{color:var(--cream);text-align:center;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;margin-top:1rem}
+.lb-close{position:fixed;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(26,18,9,.4);color:#fff;font-size:1.4rem;cursor:pointer}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(26,18,9,.4);color:#fff;font-size:1.2rem;cursor:pointer}
+.lb-prev{left:1rem}.lb-next{right:1rem}
+
+/* ─── ABOUT ─── */
+.about{background:var(--warm)}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto}
+.about-text .tag{margin-bottom:1.2rem}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:400;margin-bottom:1.4rem}
+.about-text p{font-size:.92rem;color:var(--mid);line-height:1.85;margin-bottom:1.2rem}
+.about-points{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.5rem;margin:1.8rem 0 2rem}
+.about-points li{font-size:.84rem;color:var(--ink);display:flex;gap:.6rem;align-items:flex-start;line-height:1.5}
+.about-points li::before{content:'';flex:none;width:6px;height:6px;margin-top:.5rem;background:var(--gold);transform:rotate(45deg)}
+.about-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.about-img-grid img{height:220px;width:100%;object-fit:cover}
+.about-img-grid img:first-child{grid-column:span 2;height:280px}
+
+/* ─── FAQ ─── */
+.faq{background:var(--white)}
+.faq-list{max-width:760px;margin:0 auto;border-top:1px solid var(--border)}
+.faq-list details{border-bottom:1px solid var(--border)}
+.faq-list summary{
+  list-style:none;cursor:pointer;padding:1.4rem 2.5rem 1.4rem 0;position:relative;
+  font-family:'Playfair Display',serif;font-size:1.12rem;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{
+  content:'+';position:absolute;right:.3rem;top:50%;transform:translateY(-50%);
+  font-family:'DM Sans',sans-serif;font-weight:300;font-size:1.5rem;color:var(--gold);transition:transform .25s;
+}
+.faq-list details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq-list details p{padding:0 2.5rem 1.5rem 0;font-size:.9rem;line-height:1.8;color:var(--mid)}
+
+/* ─── CONTACT ─── */
+.contact-section{background:var(--ink);color:var(--cream)}
+.contact-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;max-width:1100px;margin:0 auto}
+.contact-info .tag{border-color:rgba(184,147,90,.4);color:var(--gold);margin-bottom:1.2rem}
+.contact-info h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;margin-bottom:1rem;line-height:1.2}
+.contact-lead{font-size:.88rem;line-height:1.8;color:rgba(250,247,242,.6);margin-bottom:2rem;max-width:380px}
+.contact-detail{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.3rem}
+.contact-icon{width:38px;height:38px;flex:none;border:1px solid rgba(184,147,90,.35);border-radius:50%;display:grid;place-items:center;color:var(--gold)}
+.contact-icon svg{width:17px;height:17px}
+.contact-detail-text p:first-child{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.contact-detail-text p:last-child{font-size:.95rem;color:var(--cream);line-height:1.6}
+.contact-detail-text a{color:var(--gold)}
+.contact-detail-text a:hover{text-decoration:underline}
+
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.contact-form .full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,247,242,.55)}
+.contact-form input,.contact-form textarea,.contact-form select{
+  width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  color:var(--cream);padding:.85rem 1rem;font-size:.9rem;font-family:'DM Sans',sans-serif;
+  transition:border-color .2s;border-radius:0;color-scheme:dark;
+}
+.contact-form select option,.contact-form select optgroup{background:var(--ink);color:var(--cream)}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(250,247,242,.35)}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:none;border-color:var(--gold)}
+.contact-form .invalid{border-color:#d9826b}
+.contact-form textarea{resize:vertical;min-height:100px}
+.consent{display:flex;gap:.7rem;align-items:flex-start;font-size:.76rem;line-height:1.6;color:rgba(250,247,242,.6)}
+.consent input{width:16px;height:16px;flex:none;margin-top:.2rem;accent-color:var(--gold)}
+.consent a{color:var(--gold);text-decoration:underline}
+.form-actions{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.contact-form .btn{width:100%;padding:.95rem 1rem}
+.btn-wa{background:var(--gold);border-color:var(--gold);color:var(--white)}
+.btn-wa:hover{background:var(--gold-dark);border-color:var(--gold-dark)}
+.btn-mail{border-color:rgba(250,247,242,.4);color:var(--cream)}
+.btn-mail:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.form-msg{font-size:.82rem;line-height:1.6;min-height:1.3em}
+.form-msg.err{color:#e9a08c}
+.form-msg.ok{color:var(--gold)}
+
+/* ─── MAP ─── */
+.map-wrap{max-width:1100px;margin:4rem auto 0;position:relative;height:340px;background:#241a10;border:1px solid rgba(255,255,255,.08);overflow:hidden}
+.map-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05)}
+.map-consent{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:2rem}
+.map-consent p{font-size:.82rem;line-height:1.7;color:rgba(250,247,242,.6);max-width:440px}
+.map-consent .row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--ink);border-top:1px solid rgba(255,255,255,.08);
+  padding:2rem 3.5rem;display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(250,247,242,.7);letter-spacing:.06em}
+.footer-logo span{color:var(--gold)}
+.footer-copy{font-size:.7rem;color:rgba(250,247,242,.4);letter-spacing:.06em}
+.footer-links{display:flex;gap:1.8rem;flex-wrap:wrap}
+.footer-links a{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,247,242,.5);transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+/* ─── MOBILE ACTION BAR ─── */
+.action-bar{display:none}
+
+/* ─── SCROLL ANIMATION ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1000px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+  .g-tall,.g-wide{grid-row:auto;grid-column:auto}
+  .g-item:first-child,.g-item:last-child{grid-column:span 2}
+  .g-item:first-child img{object-position:center 30%}
+}
+@media(max-width:900px){
+  :root{--nav-h:62px}
+  nav{padding:0 1rem 0 1.25rem}
+  .nav-right{gap:.6rem}
+  .nav-links,.nav-cta{display:none}
+  .nav-burger{display:flex}
+  .mobile-menu{
+    display:block;position:fixed;top:var(--nav-h);left:0;right:0;z-index:99;
+    background:var(--cream);border-bottom:1px solid var(--border);
+    max-height:0;overflow:hidden;transition:max-height .4s ease;visibility:hidden;
+  }
+  .mobile-menu.open{max-height:480px;visibility:visible;box-shadow:0 20px 40px rgba(26,18,9,.08)}
+  .mobile-menu ul{list-style:none;display:flex;flex-direction:column;padding:1rem 1.5rem 1.5rem}
+  .mobile-menu li a{display:block;padding:.85rem 0;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--border)}
+  .mobile-menu .btn{margin-top:1.2rem;width:100%}
+  .hero{grid-template-columns:minmax(0,1fr);min-height:auto}
+  .hero-right{height:70vw;min-height:300px;max-height:520px;order:-1}
+  .hero-left{padding:2.5rem 1.25rem 3rem}
+  .hero-badge{display:none}
+  .hero-img{object-position:center 18%}
+  section{padding:4rem 1.25rem}
+  .section-header{margin-bottom:2.5rem}
+  .about-inner,.contact-inner{grid-template-columns:1fr;gap:2.5rem}
+  .about-img-grid img{height:160px}
+  .about-img-grid img:first-child{height:220px}
+  .map-wrap{margin-top:2.5rem;height:280px}
+  footer{padding:1.5rem 1.25rem 5.5rem;flex-direction:column;align-items:flex-start;gap:.8rem}
+  .action-bar{
+    display:grid;grid-template-columns:1fr 1fr 1.3fr;position:fixed;left:0;right:0;bottom:0;z-index:90;
+    background:rgba(250,247,242,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--border);padding:.5rem .5rem calc(.5rem + env(safe-area-inset-bottom));gap:.5rem;
+    transform:translateY(110%);transition:transform .3s;
+  }
+  .action-bar.show{transform:none}
+  .action-bar a{display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.75rem .5rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);color:var(--ink)}
+  .action-bar a.primary{background:var(--gold);border-color:var(--gold);color:var(--white)}
+  .action-bar svg{width:16px;height:16px}
+}
+@media(max-width:600px){
+  .nav-logo{font-size:1.05rem;gap:.5rem}
+  .nav-logo img{width:32px;height:32px}
+  .lang a{padding:.4rem .5rem}
+  .hero-stats{gap:1rem}
+  .stat-n{font-size:1.6rem}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-auto-rows:150px;gap:.6rem}
+  .about-points{grid-template-columns:1fr}
+  .contact-form,.form-actions{grid-template-columns:1fr}
+  .price-tab{padding:.7rem 1rem;font-size:.64rem}
+  .price-table td{padding:1rem .25rem}
+  .contact-info h2{font-size:2rem}
+}
+@media(max-width:380px){
+  .nav-logo img{display:none}
+  h1{font-size:2.25rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-nail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21V10a4 4 0 0 1 8 0v11"/><path d="M8 13h8"/><path d="M10 6.5 12 3l2 3.5"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-5.9-2.3L2.7 16.3a2 2 0 0 1 2.8-2.8L7 15"/></symbol>
+    <symbol id="i-foot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.4C4 11.5 3 10.5 3 8c0-2.7 1.5-6 4.5-6C9.4 2 10 3.8 10 5.5c0 3.1-2 5.7-2 8.7V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.4c0-2.1 1-3.1 1-5.6 0-2.7-1.5-6-4.5-6C14.6 6 14 7.8 14 9.5c0 3.1 2 5.7 2 8.7V20a2 2 0 1 0 4 0Z"/></symbol>
+    <symbol id="i-face" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4 4 0 0 0 7 0"/><path d="M9 9.5h.01M15 9.5h.01"/><path d="M19 3l.6 1.4L21 5l-1.4.6L19 7l-.6-1.4L17 5l1.4-.6Z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/><path d="M5 16.5 3.5 18.5M9 18l-.6 2.3M15 18l.6 2.3M19 16.5l1.5 2"/></symbol>
+    <symbol id="i-brow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c3-4 8-5.5 13-4.5 2.6.5 5 1.7 7 3.5"/><path d="M4 17c2.5-1.6 5.2-2.2 8-2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4ZM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8Zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7a11.8 11.8 0 0 0 5.7 1.5c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.4-8.4Z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  </defs>
+</svg>
+
+<!-- ─── NAV ─── -->
+<nav id="nav" aria-label="Hauptnavigation">
+  <a href="#home" class="nav-logo"><img src="images/logo.png" alt="" width="38" height="38"/>Imperial <span>Beauty</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Leistungen</a></li>
+    <li><a href="#prices">Preise</a></li>
+    <li><a href="#gallery">Salon</a></li>
+    <li><a href="#about">Über uns</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+  <div class="nav-right">
+  <div class="lang" aria-label="Sprache">
+    <a href="index.html" hreflang="uk" lang="uk">UA</a>
+    <a href="de.html" hreflang="de" lang="de" aria-current="page">DE</a>
+  </div>
+  <a href="#contact" class="nav-cta">Termin buchen</a>
+  <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#services">Leistungen</a></li>
+    <li><a href="#prices">Preise</a></li>
+    <li><a href="#gallery">Salon</a></li>
+    <li><a href="#about">Über uns</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+    <li><a href="#contact" class="btn btn-gold" style="color:var(--white);border:none">Termin buchen</a></li>
+  </ul>
+</div>
+
+<main>
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="divider"></span>
+      <p>Beauty Salon · Kiel, Deutschland</p>
+    </div>
+    <h1>Ihre Schönheit —<br/>unsere <em>Kunst</em></h1>
+    <p class="hero-desc">
+      Professionelle Pflege für Nägel, Gesichtshaut, Wimpern und Augenbrauen.
+      Moderne Techniken, hochwertige Materialien und ein individueller Ansatz für jede Kundin und jeden Kunden.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-gold"><svg><use href="#i-cal"/></svg>Online buchen</a>
+      <a href="#prices" class="btn">Preise ansehen</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-n">2,8k</div>
+        <div class="stat-l">Zufriedene Kunden</div>
+      </div>
+      <div>
+        <div class="stat-n">1,4k</div>
+        <div class="stat-l">Nail Designs</div>
+      </div>
+      <div>
+        <div class="stat-n">3,4k</div>
+        <div class="stat-l">Behandlungsstunden</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img" src="images/reception.jpg" alt="Empfang des Imperial Beauty Salon mit Logo" width="1050" height="1400" fetchpriority="high"/>
+    <div class="hero-badge">
+      <span class="tag">Zum Brook 3</span>
+      <div class="hero-badge-title">Wir freuen uns auf Sie</div>
+      <div class="hero-badge-sub">Gemütliches Studio für Nägel, Gesicht, Wimpern und Brauen</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section id="services">
+  <div class="section-header reveal">
+    <span class="tag">Unsere Leistungen</span>
+    <h2>Schönheit in ihrer ganzen Vielfalt</h2>
+    <p>Jede Behandlung ist Pflege für Sie – von den Nägeln bis zum Gesicht, von den Wimpern bis zu den Augenbrauen.</p>
+  </div>
+  <div class="services-grid">
+    <article class="service-card reveal">
+      <div class="service-icon"><svg><use href="#i-nail"/></svg></div>
+      <h3>Nageldesign</h3>
+      <p>Kreatives Nageldesign nach Ihren Wünschen – für ein perfektes Finish. Gel, Acryl, Shellac.</p>
+      <div class="service-actions">
+        <button class="service-link" data-tab="nails">Preise</button>
+        <button class="service-link alt" data-book="Nageldesign">Buchen</button>
+      </div>
+    </article>
+    <article class="service-card reveal">
+      <div class="service-icon"><svg><use href="#i-hand"/></svg></div>
+      <h3>Maniküre</h3>
+      <p>Klassische und apparative Maniküre. Nagelhautpflege, Feuchtigkeit und Schutz für Ihre Nägel.</p>
+      <div class="service-actions">
+        <button class="service-link" data-tab="nails">Preise</button>
+        <button class="service-link alt" data-book="Klassische Maniküre">Buchen</button>
+      </div>
+    </article>
+    <article class="service-card reveal">
+      <div class="service-icon"><svg><use href="#i-foot"/></svg></div>
+      <h3>Pediküre</h3>
+      <p>Entspannen Sie sich mit unserer wohltuenden Fußpflege. Klassische und apparative Pediküre, SPA-Behandlungen.</p>
+      <div class="service-actions">
+        <button class="service-link" data-tab="pedi">Preise</button>
+        <button class="service-link alt" data-book="Klassische Pediküre">Buchen</button>
+      </div>
+    </article>
+    <article class="service-card reveal">
+      <div class="service-icon"><svg><use href="#i-face"/></svg></div>
+      <h3>Gesichtspflege</h3>
+      <p>Professionelle Hautpflege für einen strahlenden, jugendlichen Teint. Reinigung, Aquafacial, Anti-Aging und RF-Lifting.</p>
+      <div class="service-actions">
+        <button class="service-link" data-tab="face">Preise</button>
+        <button class="service-link alt" data-book="Basic Facial">Buchen</button>
+      </div>
+    </article>
+    <article class="service-card reveal">
+      <div class="service-icon"><svg><use href="#i-eye"/></svg></div>
+      <h3>Wimpern</h3>
+      <p>Wimpernverlängerung und Wimpernlifting – jeden Tag ein perfekter Augenaufschlag, ganz ohne Aufwand.</p>
+      <div class="service-actions">
+        <button class="service-link" data-tab="eyes">Preise</button>
+        <button class="service-link alt" data-book="Wimpernverlängerung (klassisch)">Buchen</button>
+      </div>
+    </article>
+    <article class="service-card reveal">
+      <div class="service-icon"><svg><use href="#i-brow"/></svg></div>
+      <h3>Augenbrauen</h3>
+      <p>Korrektur und Styling der Augenbrauen. Schönheit, die den Blick definiert und Ihre Gesichtszüge betont.</p>
+      <div class="service-actions">
+        <button class="service-link" data-tab="eyes">Preise</button>
+        <button class="service-link alt" data-book="Brow Lifting + Styling">Buchen</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ─── PRICES ─── -->
+<section id="prices" class="price-section">
+  <div class="section-header reveal">
+    <span class="tag">Preisliste</span>
+    <h2>Leistungen &amp; Preise</h2>
+    <p>Echte Qualität und Professionalität haben ihren Wert.</p>
+  </div>
+
+  <div class="price-tabs" role="tablist" aria-label="Leistungskategorien">
+    <button class="price-tab" role="tab" id="t-nails" aria-controls="tab-nails" aria-selected="true">Nägel</button>
+    <button class="price-tab" role="tab" id="t-face" aria-controls="tab-face" aria-selected="false" tabindex="-1">Gesicht</button>
+    <button class="price-tab" role="tab" id="t-eyes" aria-controls="tab-eyes" aria-selected="false" tabindex="-1">Wimpern &amp; Brauen</button>
+    <button class="price-tab" role="tab" id="t-pedi" aria-controls="tab-pedi" aria-selected="false" tabindex="-1">Pediküre</button>
+  </div>
+
+  <!-- NAILS -->
+  <div class="price-panel" id="tab-nails" role="tabpanel" aria-labelledby="t-nails">
+    <table class="price-table">
+      <tbody>
+        <tr><td>Klassische Maniküre<span class="sub">Pflege, Form, Lack</span></td><td>ab 25 €</td></tr>
+        <tr><td>Gel-Lack (Shellac)<span class="sub">Entfernen + Auftragen</span></td><td>ab 35 €</td></tr>
+        <tr><td>Nagelverlängerung (Gel)<span class="sub">Komplettes Set</span></td><td>ab 55 €</td></tr>
+        <tr><td>Nageldesign<span class="sub">Malerei, Stamping, Chrome-Effekt – pro Nagel</span></td><td>ab 3 €</td></tr>
+        <tr><td>Nagelauffüllung<span class="sub">Refill, Längenkorrektur</span></td><td>ab 40 €</td></tr>
+        <tr><td>Entfernung Gel / Acryl<span class="sub">Schonende Entfernung ohne Schäden</span></td><td>ab 15 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FACE -->
+  <div class="price-panel" id="tab-face" role="tabpanel" aria-labelledby="t-face" hidden>
+    <table class="price-table">
+      <tbody>
+        <tr><td>Basic Facial<span class="sub">Basispflege: Reinigung, Tonisierung, Maske</span></td><td>54 €</td></tr>
+        <tr><td>Deep Cleansing Facial<span class="sub">Tiefenreinigung der Haut</span></td><td>64 €</td></tr>
+        <tr><td>Anti-Aging Facial<span class="sub">Anti-Aging-Lifting-Pflege</span></td><td>84 €</td></tr>
+        <tr><td>Radiofrequenz<span class="sub">RF-Lifting für straffere Haut</span></td><td>94 €</td></tr>
+        <tr><td>Aquafacial<span class="sub">Hydro-Peeling: Reinigung, Exfoliation, Feuchtigkeit</span></td><td>109 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EYES -->
+  <div class="price-panel" id="tab-eyes" role="tabpanel" aria-labelledby="t-eyes" hidden>
+    <table class="price-table">
+      <tbody>
+        <tr><td>Wimpernverlängerung (klassisch)<span class="sub">Natürlicher Effekt</span></td><td>ab 50 €</td></tr>
+        <tr><td>Wimpernverlängerung (Volumen)<span class="sub">2D–5D-Fächer</span></td><td>ab 65 €</td></tr>
+        <tr><td>Wimpernlifting<span class="sub">+ Keratin, Färben</span></td><td>ab 55 €</td></tr>
+        <tr><td>Entfernung der Wimpern</td><td>ab 15 €</td></tr>
+        <tr><td>Augenbrauenkorrektur (Wachs/Faden)</td><td>ab 12 €</td></tr>
+        <tr><td>Brow Lifting + Styling<span class="sub">Inkl. Färben</span></td><td>ab 45 €</td></tr>
+        <tr><td>Permanent Make-up Augenbrauen (Powder/Ombré)<span class="sub">Inkl. Beratung</span></td><td>ab 200 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PEDI -->
+  <div class="price-panel" id="tab-pedi" role="tabpanel" aria-labelledby="t-pedi" hidden>
+    <table class="price-table">
+      <tbody>
+        <tr><td>Klassische Pediküre<span class="sub">Fußbad, Pflege, Lack</span></td><td>ab 40 €</td></tr>
+        <tr><td>Apparative Pediküre<span class="sub">Entfernung von Hornhaut und Rissen</span></td><td>ab 45 €</td></tr>
+        <tr><td>SPA-Pediküre<span class="sub">Peeling + Maske + Massage</span></td><td>ab 60 €</td></tr>
+        <tr><td>Gel-Lack für Fußnägel</td><td>ab 25 €</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="price-note reveal">* Der genaue Preis hängt vom Aufwand und den Materialien ab. Die Beratung ist kostenlos.</p>
+  <div class="price-cta"><a href="#contact" class="btn btn-gold">Jetzt Termin buchen</a></div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section id="gallery" class="gallery">
+  <div class="section-header reveal">
+    <span class="tag">Unser Salon</span>
+    <h2>Ein Ort zum Wohlfühlen</h2>
+    <p>Helle Räume, moderne Ausstattung und eine ruhige Atmosphäre – werfen Sie einen Blick hinein.</p>
+  </div>
+  <div class="gallery-grid reveal">
+    <figure class="g-item g-tall" tabindex="0" role="button"><img src="images/reception.jpg" alt="Empfang mit Logo des Imperial Beauty Salon" loading="lazy"/><figcaption>Empfang</figcaption></figure>
+    <figure class="g-item g-wide" tabindex="0" role="button"><img src="images/nail-studio.jpg" alt="Nagelstudio mit zwei Arbeitsplätzen" loading="lazy"/><figcaption>Nagelstudio</figcaption></figure>
+    <figure class="g-item" tabindex="0" role="button"><img src="images/logo-wall.jpg" alt="Beleuchtetes Salon-Logo an rosa Wand" loading="lazy"/><figcaption>Ambiente</figcaption></figure>
+    <figure class="g-item" tabindex="0" role="button"><img src="images/pedicure.jpg" alt="Pediküre-Stuhl" loading="lazy"/><figcaption>Pediküre</figcaption></figure>
+    <figure class="g-item" tabindex="0" role="button"><img src="images/facial-room.jpg" alt="Raum für Gesichtsbehandlungen" loading="lazy"/><figcaption>Kosmetikraum</figcaption></figure>
+    <figure class="g-item" tabindex="0" role="button"><img src="images/lashes-2.jpg" alt="Wimpernverlängerung" loading="lazy"/><figcaption>Wimpern</figcaption></figure>
+  </div>
+</section>
+
+<dialog class="lightbox" id="lightbox" aria-label="Fotoansicht">
+  <button class="lb-close" id="lbClose" aria-label="Schließen">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Vorheriges Foto">‹</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Nächstes Foto">›</button>
+  <img id="lbImg" src="" alt=""/>
+  <p id="lbCap"></p>
+</dialog>
+
+<!-- ─── ABOUT ─── -->
+<section id="about" class="about">
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <span class="tag">Über uns</span>
+      <h2>Imperial Beauty Salon in Kiel</h2>
+      <p>
+        Wir sind ein Team leidenschaftlicher Beauty-Expertinnen und glauben, dass jeder Mensch
+        die beste Pflege verdient. Unser Salon in Kiel bietet ein breites Spektrum – von Nail Art
+        bis zur umfassenden Gesichtspflege.
+      </p>
+      <p>
+        Wir verwenden ausschließlich bewährte Materialien führender Marken und bilden uns ständig
+        in den neuesten Techniken weiter – für Ergebnisse, die Ihre Erwartungen übertreffen.
+      </p>
+      <ul class="about-points">
+        <li>Geschulte und erfahrene Fachkräfte</li>
+        <li>Sterile Instrumente für jeden Termin</li>
+        <li>Premium-Materialien</li>
+        <li>Wohlfühlatmosphäre und individuelle Beratung</li>
+      </ul>
+      <a href="#contact" class="btn">Kontakt aufnehmen</a>
+    </div>
+    <div class="about-img-grid reveal">
+      <img src="images/work-1.jpg" alt="Maniküre im Studio" loading="lazy" width="768" height="768"/>
+      <img src="images/work-2.jpg" alt="Gesichtsbehandlung mit Maske" loading="lazy" width="768" height="768"/>
+      <img src="images/work-3.jpg" alt="Augenbrauen-Styling" loading="lazy" width="768" height="768"/>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq" class="faq">
+  <div class="section-header reveal">
+    <span class="tag">Fragen &amp; Antworten</span>
+    <h2>Häufige Fragen</h2>
+  </div>
+  <div class="faq-list reveal">
+    <details>
+      <summary>Wie kann ich einen Termin buchen?</summary>
+      <p>Füllen Sie einfach das Formular unten aus und senden Sie es per WhatsApp oder E-Mail – wir bestätigen Ihnen den Termin. Natürlich können Sie uns auch anrufen: +49 151 420 55 837.</p>
+    </details>
+    <details>
+      <summary>Kann ich meine eigene Idee für das Nageldesign mitbringen?</summary>
+      <p>Sehr gerne! Schicken Sie uns ein Foto Ihres Wunschdesigns mit Ihrer Terminanfrage – wir beraten Sie zur Umsetzung, Dauer und zum Preis.</p>
+    </details>
+    <details>
+      <summary>Wie bereite ich mich auf eine Wimpernverlängerung vor?</summary>
+      <p>Kommen Sie bitte ohne Augen-Make-up und nehmen Sie Kontaktlinsen vor der Behandlung heraus. In den ersten 24 Stunden danach die Wimpern nicht nass machen und keine ölhaltigen Produkte verwenden.</p>
+    </details>
+    <details>
+      <summary>Wie lange hält Gel-Lack?</summary>
+      <p>In der Regel 3–4 Wochen – je nach Nagelwachstum und Beanspruchung. Für ein gepflegtes Aussehen empfehlen wir etwa alle 3–4 Wochen ein Refill.</p>
+    </details>
+    <details>
+      <summary>Warum steht in der Preisliste „ab“?</summary>
+      <p>Der Endpreis hängt von Länge, Aufwand des Designs und den gewählten Materialien ab. Den genauen Preis nennen wir Ihnen bei der kostenlosen Beratung vor der Behandlung.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <span class="tag">Kontakt</span>
+      <h2>Termin<br/>vereinbaren</h2>
+      <p class="contact-lead">Wählen Sie Leistung und Wunschzeit – wir melden uns, um Ihren Termin zu bestätigen.</p>
+      <div class="contact-detail">
+        <span class="contact-icon"><svg><use href="#i-pin"/></svg></span>
+        <div class="contact-detail-text">
+          <p>Adresse</p>
+          <p><a href="https://www.google.com/maps/dir/?api=1&destination=Zum+Brook+3,+24143+Kiel" target="_blank" rel="noopener">Zum Brook 3, 24143 Kiel</a><br/>Schleswig-Holstein, Deutschland</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon"><svg><use href="#i-phone"/></svg></span>
+        <div class="contact-detail-text">
+          <p>Telefon / WhatsApp</p>
+          <p><a href="tel:+4915142055837">+49 151 420 55 837</a></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon"><svg><use href="#i-mail"/></svg></span>
+        <div class="contact-detail-text">
+          <p>E-Mail</p>
+          <p><a href="mailto:post@imperial.gmbh">post@imperial.gmbh</a></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-icon"><svg><use href="#i-clock"/></svg></span>
+        <div class="contact-detail-text">
+          <p>Öffnungszeiten</p>
+          <p>Mo–Fr: 10:00–19:00<br/>Sa: 10:00–17:00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <form class="contact-form" id="bookingForm" novalidate>
+        <div class="field">
+          <label for="f-name">Name *</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ihr Name" required/>
+        </div>
+        <div class="field">
+          <label for="f-phone">Telefon *</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+49 …" required/>
+        </div>
+        <div class="field full">
+          <label for="f-service">Leistung</label>
+          <select id="f-service" name="service">
+            <option value="">Leistung wählen (optional)</option>
+            <optgroup label="Nägel">
+              <option>Klassische Maniküre</option>
+              <option>Gel-Lack (Shellac)</option>
+              <option>Nagelverlängerung (Gel)</option>
+              <option>Nageldesign</option>
+              <option>Nagelauffüllung</option>
+              <option>Entfernung Gel / Acryl</option>
+            </optgroup>
+            <optgroup label="Gesicht">
+              <option>Basic Facial</option>
+              <option>Deep Cleansing Facial</option>
+              <option>Anti-Aging Facial</option>
+              <option>Radiofrequenz</option>
+              <option>Aquafacial</option>
+            </optgroup>
+            <optgroup label="Wimpern &amp; Brauen">
+              <option>Wimpernverlängerung (klassisch)</option>
+              <option>Wimpernverlängerung (Volumen)</option>
+              <option>Wimpernlifting</option>
+              <option>Augenbrauenkorrektur (Wachs/Faden)</option>
+              <option>Brow Lifting + Styling</option>
+              <option>Permanent Make-up Augenbrauen</option>
+            </optgroup>
+            <optgroup label="Pediküre">
+              <option>Klassische Pediküre</option>
+              <option>Apparative Pediküre</option>
+              <option>SPA-Pediküre</option>
+            </optgroup>
+            <option>Beratung</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-date">Wunschdatum</label>
+          <input id="f-date" name="date" type="date"/>
+        </div>
+        <div class="field">
+          <label for="f-time">Wunschzeit</label>
+          <select id="f-time" name="time">
+            <option value="">Beliebig</option>
+            <option>Vormittags (10:00–12:00)</option>
+            <option>Mittags (12:00–15:00)</option>
+            <option>Nachmittags (15:00–19:00)</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-msg">Nachricht</label>
+          <textarea id="f-msg" name="message" placeholder="Wünsche, Design, Fragen …"></textarea>
+        </div>
+        <label class="consent full">
+          <input type="checkbox" id="f-consent" required/>
+          <span>Ich bin damit einverstanden, dass meine Daten zur Kontaktaufnahme bezüglich meines Termins verwendet werden. Mehr dazu in der <a href="https://www.beauty-imperial.de/kontakt/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a>. *</span>
+        </label>
+        <div class="form-actions full">
+          <button type="submit" class="btn btn-wa" data-via="wa"><svg><use href="#i-wa"/></svg>Per WhatsApp senden</button>
+          <button type="submit" class="btn btn-mail" data-via="mail"><svg><use href="#i-mail"/></svg>Per E-Mail senden</button>
+        </div>
+        <p class="form-msg full" id="formMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="map-wrap reveal" id="mapWrap">
+    <div class="map-consent" id="mapConsent">
+      <svg width="28" height="28" style="color:var(--gold)"><use href="#i-pin"/></svg>
+      <p>Die Karte wird von Google Maps geladen. Nach dem Klick kann Google Ihre Daten (z. B. IP-Adresse) erhalten.</p>
+      <div class="row">
+        <button class="btn btn-gold" id="loadMap" type="button">Karte anzeigen</button>
+        <a class="btn btn-mail" href="https://www.google.com/maps/dir/?api=1&destination=Zum+Brook+3,+24143+Kiel" target="_blank" rel="noopener">Route planen</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <span class="footer-logo">Imperial <span>Beauty</span></span>
+  <span class="footer-copy">© <span id="year">2026</span> Imperial Beauty Salon, Kiel</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/imperial_beauty_kiel" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@imperial.beauty29" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.beauty-imperial.de/kontakt/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+    <a href="https://www.beauty-imperial.de/kontakt/impressum/" target="_blank" rel="noopener">Impressum</a>
+  </div>
+</footer>
+
+<!-- ─── MOBILE ACTION BAR ─── -->
+<div class="action-bar" id="actionBar">
+  <a href="tel:+4915142055837"><svg><use href="#i-phone"/></svg>Anrufen</a>
+  <a href="https://wa.me/4915142055837" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a href="#contact" class="primary"><svg><use href="#i-cal"/></svg>Buchen</a>
+</div>
+
+<script>
+(function(){
+  const PHONE='4915142055837';
+  const EMAIL='post@imperial.gmbh';
+
+  /* ── Nav: shadow on scroll + active link + mobile bar ── */
+  const nav=document.getElementById('nav');
+  const bar=document.getElementById('actionBar');
+  const contact=document.getElementById('contact');
+  function onScroll(){
+    const y=window.scrollY;
+    nav.classList.toggle('scrolled',y>10);
+    const cTop=contact.getBoundingClientRect().top;
+    bar.classList.toggle('show',y>window.innerHeight*.6 && cTop>window.innerHeight*.5);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  const links=[...document.querySelectorAll('.nav-links a')];
+  const secObs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}});
+  },{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('main section[id]').forEach(s=>secObs.observe(s));
+
+  /* ── Mobile menu ── */
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  function setMenu(open){
+    menu.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  }
+  burger.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+  document.addEventListener('click',e=>{if(menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target))setMenu(false)});
+
+  /* ── Price tabs (accessible) ── */
+  const tabs=[...document.querySelectorAll('.price-tab')];
+  function showTab(id,focus){
+    tabs.forEach(t=>{
+      const on=t.id==='t-'+id;
+      t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+      if(on&&focus)t.focus();
+    });
+  }
+  tabs.forEach((t,i)=>{
+    t.addEventListener('click',()=>showTab(t.id.slice(2)));
+    t.addEventListener('keydown',e=>{
+      let n=null;
+      if(e.key==='ArrowRight')n=(i+1)%tabs.length;
+      if(e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;
+      if(e.key==='Home')n=0; if(e.key==='End')n=tabs.length-1;
+      if(n!==null){e.preventDefault();showTab(tabs[n].id.slice(2),true)}
+    });
+  });
+  document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{
+    showTab(b.dataset.tab);
+    document.getElementById('prices').scrollIntoView();
+  }));
+
+  /* ── "Buchen" from service cards → preselect service ── */
+  const serviceSel=document.getElementById('f-service');
+  document.querySelectorAll('[data-book]').forEach(b=>b.addEventListener('click',()=>{
+    serviceSel.value=b.dataset.book;
+    contact.scrollIntoView();
+    setTimeout(()=>document.getElementById('f-name').focus({preventScroll:true}),600);
+  }));
+
+  /* ── Reveal on scroll ── */
+  const revObs=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+  /* ── Gallery lightbox ── */
+  const items=[...document.querySelectorAll('.g-item')];
+  const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+  let cur=0;
+  function show(i){
+    cur=(i+items.length)%items.length;
+    const img=items[cur].querySelector('img');
+    lbImg.src=img.src;lbImg.alt=img.alt;
+    lbCap.textContent=items[cur].querySelector('figcaption').textContent;
+  }
+  items.forEach((it,i)=>{
+    const open=()=>{show(i);lb.showModal()};
+    it.addEventListener('click',open);
+    it.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
+  });
+  document.getElementById('lbClose').onclick=()=>lb.close();
+  document.getElementById('lbPrev').onclick=()=>show(cur-1);
+  document.getElementById('lbNext').onclick=()=>show(cur+1);
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+  lb.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(cur+1);if(e.key==='ArrowLeft')show(cur-1)});
+
+  /* ── Booking form → WhatsApp / E-Mail ── */
+  const form=document.getElementById('bookingForm');
+  const msg=document.getElementById('formMsg');
+  const dateIn=document.getElementById('f-date');
+  const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+  dateIn.min=today.toISOString().slice(0,10);
+
+  let via='wa';
+  form.querySelectorAll('[data-via]').forEach(b=>b.addEventListener('click',()=>{via=b.dataset.via}));
+
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    msg.className='form-msg full';msg.textContent='';
+    const $=id=>document.getElementById(id);
+    const nameIn=$('f-name'),phoneIn=$('f-phone');
+    const name=nameIn.value.trim(),phone=phoneIn.value.trim();
+    const service=$('f-service').value,time=$('f-time').value,note=$('f-msg').value.trim();
+    const consent=$('f-consent');
+    const phoneOk=phone.replace(/\D/g,'').length>=6;
+    nameIn.classList.toggle('invalid',!name);
+    phoneIn.classList.toggle('invalid',!phoneOk);
+    if(!name||!phoneOk){
+      msg.classList.add('err');msg.textContent='Bitte geben Sie Ihren Namen und eine gültige Telefonnummer an.';
+      (!name?nameIn:phoneIn).focus();return;
+    }
+    if(!consent.checked){
+      msg.classList.add('err');msg.textContent='Bitte bestätigen Sie Ihre Einwilligung zur Datenverarbeitung.';consent.focus();return;
+    }
+    let d='';
+    if(dateIn.value){const [y,m,dd]=dateIn.value.split('-');d=`${dd}.${m}.${y}`}
+    const lines=[
+      'Guten Tag! Ich möchte einen Termin im Imperial Beauty Salon vereinbaren.',
+      '',
+      `Name: ${name}`,
+      `Telefon: ${phone}`,
+      service?`Leistung: ${service}`:null,
+      d?`Datum: ${d}`:null,
+      time?`Uhrzeit: ${time}`:null,
+      note?`Nachricht: ${note}`:null
+    ].filter(l=>l!==null);
+    const text=lines.join('\n');
+    if(via==='wa'){
+      window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`,'_blank','noopener');
+      msg.textContent='✓ WhatsApp wird geöffnet – tippen Sie nur noch auf „Senden“.';
+    }else{
+      const subject=`Terminanfrage: ${service||'Behandlung'} – ${name}`;
+      window.location.href=`mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+      msg.textContent='✓ Ihr E-Mail-Programm wird geöffnet – bitte prüfen und absenden.';
+    }
+    msg.classList.add('ok');
+  });
+  form.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('input',()=>el.classList.remove('invalid')));
+
+  /* ── Map (loads only after consent) ── */
+  document.getElementById('loadMap').addEventListener('click',()=>{
+    const f=document.createElement('iframe');
+    f.src='https://maps.google.com/maps?q=Zum%20Brook%203%2C%2024143%20Kiel&z=15&hl=de&output=embed';
+    f.title='Imperial Beauty Salon auf der Karte';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';
+    document.getElementById('mapConsent').remove();
+    document.getElementById('mapWrap').appendChild(f);
+  });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
