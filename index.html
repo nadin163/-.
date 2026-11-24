@@ -355,6 +355,7 @@ section{position:relative}
 .browser__bar span{margin-left:10px;font-size:10px;letter-spacing:.06em;color:var(--dim);background:#121110;border-radius:6px;padding:3px 10px;flex:1;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .browser__view{position:relative;aspect-ratio:16/10;overflow:hidden}
 .browser__view img{position:absolute;top:0;left:0;width:100%;height:auto;transform:translateY(0);transition:transform 1.4s var(--ease);will-change:transform}
+@media (hover:none),(pointer:coarse){.browser__view img{transform:none!important;transition:none;will-change:auto}}
 .browser__hint{position:absolute;right:12px;bottom:12px;font-size:11px;letter-spacing:.06em;background:rgba(13,12,10,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);padding:6px 10px;border-radius:99px;color:var(--ink);transition:opacity .4s}
 .site-case:hover .browser__hint{opacity:0}
 @media (hover:none){.browser__hint{display:none}}
@@ -1171,7 +1172,8 @@ footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(
   }));
 
   /* ---------- site cases: scroll screenshot on hover ---------- */
-  $$('.site-case').forEach(c => {
+  /* only on devices with a real mouse; phones/tablets show the first screen, static */
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) $$('.site-case').forEach(c => {
     const view = c.querySelector('.browser__view'), img = view.querySelector('img');
     if (!img) return;
     c.addEventListener('mouseenter', () => {
@@ -1185,29 +1187,6 @@ footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(
       img.style.transform = 'translateY(0)';
     });
   });
-
-  /* ---------- touch screens: auto-scroll site screenshots while visible ---------- */
-  if (matchMedia('(hover: none)').matches) {
-    const sio = new IntersectionObserver(es => es.forEach(e => {
-      const view = e.target.querySelector('.browser__view'), img = view && view.querySelector('img');
-      if (!img) return;
-      if (e.isIntersecting) {
-        const run = down => {
-          const dist = img.offsetHeight - view.offsetHeight;
-          if (dist <= 0 || !img._on) return;
-          img.style.transition = `transform ${down ? Math.max(6, dist / 90) : 1.6}s ${down ? 'linear' : 'ease'}`;
-          img.style.transform = `translateY(${down ? -dist : 0}px)`;
-          img._t = setTimeout(() => run(!down), (down ? Math.max(6, dist / 90) : 1.6) * 1000 + 1200);
-        };
-        img._on = true;
-        if (img.complete && img.naturalWidth) run(true); else img.addEventListener('load', () => run(true), { once: true });
-      } else {
-        img._on = false; clearTimeout(img._t);
-        img.style.transition = 'none'; img.style.transform = 'translateY(0)';
-      }
-    }), { threshold: 0.5 });
-    $$('.site-case').forEach(c => { const im = c.querySelector('.browser__view img'); if (im) im.loading = 'eager'; sio.observe(c); });
-  }
 
   /* ---------- marquee: JS-driven so it moves on every phone/browser ---------- */
   (() => {
